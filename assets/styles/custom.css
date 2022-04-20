@@ -2242,4 +2242,39 @@ ul.products li.product .product-content .button::after {
   font-weight: 800;
   color: #22203c;
 }
+
+.fancy-product .site-main .product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fancy-product .site-main .product > * {
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
+
+.fancy-product .site-main .product > .product-summary-wrap {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.fancy-product .site-main .product > .woocommerce-tabs {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+.fancy-product .site-main .product > .custom-product-designer {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  aspect-ratio: 2 / 1;
+}
 /*# sourceMappingURL=custom.css.map */
