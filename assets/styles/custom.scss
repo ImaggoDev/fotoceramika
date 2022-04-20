@@ -1,0 +1,19 @@
+@import "variables";
+@import "global";
+@import "components/header";
+// Home page
+@import "pages/home-page";
+// About page
+@import "pages/about-page";
+// Single page
+@import "pages/single-page";
+// Contact page
+@import "pages/contact-page";
+// Component
+@import "components/posts_grid";
+@import "components/faqs";
+// Woo
+@import "woocommerce";
+
+
+
