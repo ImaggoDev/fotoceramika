@@ -498,7 +498,7 @@ ul.products {
           top: 13px;
           width: 16px;
           height: 2px;
-          margin: 0; 
+          margin: 0;
           border-top: 0;
           }
         }
@@ -517,7 +517,7 @@ ul.products {
           top: 13px;
           width: 16px;
           height: 2px;
-          margin: 0; 
+          margin: 0;
           border-top: 0;
           }
         }
@@ -532,5 +532,27 @@ ul.products {
         }
       }
     }
+  }
+}
+
+.fancy-product .site-main .product {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    order: 5;
+  }
+
+  & > .product-summary-wrap {
+    order: 1;
+  }
+
+  & > .woocommerce-tabs {
+    order: 3;
+  }
+
+  & > .custom-product-designer {
+    order: 2;
+    aspect-ratio: 2 / 1;
   }
 }
