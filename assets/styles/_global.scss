@@ -7,6 +7,20 @@ a,
   font-family: "Manrope";
   font-weight: 500;
 }
+a.btn-primary {
+  padding: 26px;
+  background-color: $color_primary400;
+  color: white;
+  &:hover {
+    background-color: $color_text400!important;
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  &:focus, &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
 /* ICON */
 .icon_btn_arrow {
   background-image: url("../icons/icon-arrow.svg");

@@ -88,3 +88,52 @@ function rename_additional_info_tab( $tabs ) {
 }
 
 
+/**
+ * 
+ * Woocommerce my account nav
+ * 
+ */
+
+add_filter ( 'woocommerce_account_menu_items', 'custom_myaccount_nav' );
+
+function custom_myaccount_nav( $menu_links ){
+	
+    unset( $menu_links['edit-address'] ); 
+	unset( $menu_links['dashboard'] ); 
+	unset( $menu_links['orders'] ); 
+	unset( $menu_links['downloads'] ); 
+	unset( $menu_links['edit-account'] ); 
+	unset( $menu_links['customer-logout'] ); 
+
+    $menu_links['dashboard'] = 'Kokpit';
+	$menu_links['edit-account'] = 'Dane osobowe';
+    $menu_links['orders'] = 'Zamówienia';
+    $menu_links['edit-address'] = 'Adresy';
+    $menu_links['customer-logout'] = 'Wyloguj się';
+
+	return $menu_links;
+}
+
+/**
+ * 
+ * Woocommerce delete field display name user 
+ * 
+ */
+
+add_filter('woocommerce_save_account_details_required_fields', 'account_details_required_fields' );
+function account_details_required_fields( $required_fields ){
+    unset( $required_fields['account_display_name'] );
+    return $required_fields;
+}
+
+/**
+ * 
+ * Woocommerce orders column change name 
+ * 
+ */
+
+function filter_woocommerce_account_orders_columns( $columns ) {    
+    $columns['order-actions'] = __( 'Akcje', 'woocommerce' );
+    return $columns;
+}
+add_filter( 'woocommerce_account_orders_columns', 'filter_woocommerce_account_orders_columns', 10, 1 );
