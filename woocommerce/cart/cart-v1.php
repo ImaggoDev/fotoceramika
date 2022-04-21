@@ -115,7 +115,7 @@ $porto_woo_version = porto_get_woo_version_number();
 					<td colspan="6" class="actions">
 						<?php if ( version_compare( $porto_woo_version, '2.5', '<' ) ? WC()->cart->coupons_enabled() : wc_coupons_enabled() ) { ?>
 							<div class="coupon pt-left">
-								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="btn btn-default" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>" />
+								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Podaj kod kuponu', 'woocommerce' ); ?>" /> <button type="submit" class="btn btn-default" name="apply_coupon"><?php esc_attr_e( 'Zastosuj kupon', 'woocommerce' ); ?></button>
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
 							</div>
 						<?php } ?>

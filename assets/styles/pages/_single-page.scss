@@ -11,6 +11,9 @@
     }
     .page_header_text {
       margin: 10.6% 2% 0 28.5%;
+      @media (max-width: $notebook) {
+       margin: 10.6% 2% 0 24.5%
+      }
       @media (max-width: $tablet) {
         margin: 10.6% 2% 0 9.5%;
         h3.porto-heading {
@@ -54,7 +57,7 @@
       .page_header_text {
         margin: 7.6% 2% 0 28.5%;
         @media (max-width: $notebook) {
-          margin: 5.6% 2% 0 28.5%;
+          margin: 5.6% 2% 0 24.5%;
         }
         @media (max-width: $tablet) {
           margin: 9.6% 2% 0 5.5%;;

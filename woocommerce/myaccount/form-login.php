@@ -100,7 +100,7 @@ function print_porto_social_login() {
 								<input type="checkbox" name="rememberme" id="rememberme" value="forever" class="porto-control-input woocommerce-form__input woocommerce-form__input-checkbox">
 								<label class="porto-control-label no-radius" for="rememberme"><?php esc_html_e( 'Remember me', 'woocommerce' ); ?></label>
 							</div>
-							<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" class="text-v-dark font-weight-semibold"><?php esc_html_e( 'Forgot Password?', 'porto' ); ?></a>
+							<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" class="text-v-dark font-weight-semibold"><?php esc_html_e( 'Nie pamiętasz hasła?', 'porto' ); ?></a>
 						</div>
 						<p class="form-row mb-3 mb-lg-0 pb-1 pb-lg-0">
 							<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
