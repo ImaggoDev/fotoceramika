@@ -121,6 +121,10 @@ a.btn-primary {
         }
         a {
           font-size: 12px;
+          &:hover {
+            color: $color_primary400;
+            transition: all 0.3s;
+          }
         }
       }
       &#menu-footer-menu-sklep-2 {

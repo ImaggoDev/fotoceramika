@@ -15,6 +15,9 @@
     .btn {
       text-transform: inherit;
       padding: 24px;
+      &:hover {
+        border: 1px solid $color_text400;
+      }
       span {
         font-size: 14px;
         font-weight: 800;
@@ -86,6 +89,9 @@
   // image block
   .home_block_image {
     padding: 0!important;
+    a.btn-primary:hover {
+      background-color: transparent!important;
+    }
     .home_block_image_col {
       max-width: 1920px;
       margin: 0 auto 20px auto;
