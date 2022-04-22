@@ -1427,6 +1427,16 @@ ul.products {
         }
         .payment_methods {
           border-bottom: 1px solid $color_text200;
+          .payment_method_pay_by_paynow_pl_pbl {
+            img { 
+              padding: 3px;
+              background-color: white;
+              margin-left: 5px;
+            }
+          }
+          .paynow-data-processing-info-less {
+            font-family: 'Manrope';
+          }
         }
         .woocommerce-terms-and-conditions-wrapper {
           .woocommerce-privacy-policy-text {

@@ -3624,6 +3624,16 @@ ul.products li.product .product-content .button::after {
   border-bottom: 1px solid #4A4952;
 }
 
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_pbl img {
+  padding: 3px;
+  background-color: white;
+  margin-left: 5px;
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .paynow-data-processing-info-less {
+  font-family: 'Manrope';
+}
+
 .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .woocommerce-terms-and-conditions-wrapper .woocommerce-privacy-policy-text p {
   color: white;
   font-size: 16px;
