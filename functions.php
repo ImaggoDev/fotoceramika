@@ -11,6 +11,10 @@ function porto_child_css()
     wp_register_style('styles-child-custom', esc_url(get_stylesheet_directory_uri()) . '/assets/styles/custom.min.css');
     wp_enqueue_style('styles-child');
     wp_enqueue_style('styles-child-custom');
+
+    wp_register_script('scripts-child', esc_url(get_stylesheet_directory_uri()) . '/assets/scripts/custom.js', null, null, true);
+    wp_enqueue_script('scripts-child');
+
     if (is_rtl()) {
         wp_deregister_style('styles-child-rtl');
         wp_register_style('styles-child-rtl', esc_url(get_stylesheet_directory_uri()) . '/style_rtl.css');
@@ -51,10 +55,14 @@ add_filter('woocommerce_variable_sale_price_html', function ($price, $product) {
         }
         return $price;
 },10, 2);
+
+
 add_filter('woocommerce_variable_price_html', function ($price, $product) {
     // Main Price
-    $prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
-    $price = $prices[0] !== $prices[1] ? sprintf( __( 'od %1$s', 'woocommerce' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+    if(!is_product()) {
+        $prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
+        $price = $prices[0] !== $prices[1] ? sprintf( __( 'od %1$s', 'woocommerce' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+    }
     return $price;
 },10, 2);
 
@@ -87,4 +95,29 @@ function rename_additional_info_tab( $tabs ) {
     $tabs['description']['title'] = 'Opis produktu';
 	return $tabs;
 
+}
+
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 8 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 5 );
+
+
+add_action('woocommerce_before_add_to_cart_form', 'custom_product_desc');
+
+function custom_product_desc() {
+    global $post;
+    $fpd = get_post_meta($post->ID, 'fpd_product_settings');
+
+    if(empty($fpd)) {
+        return false;
+    }
+    ob_start();
+    get_template_part('template-parts/content', 'fpd-product');
+    $html = ob_get_contents();
+    ob_end_clean();
+
+    echo $html;
 }
