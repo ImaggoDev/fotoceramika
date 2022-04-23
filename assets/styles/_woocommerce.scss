@@ -569,6 +569,10 @@ ul.products {
           top: 32px;
           width: 7.41px;
           height: 12px;
+          @media (max-width: $tablet) {
+            top: 30px;
+            right: 20%;
+          }
           @media (max-width: $mobile) {
             top: 21px;
           }
@@ -705,14 +709,14 @@ ul.products {
             }
             @media (max-width: $tablet) {
               right: 20%;
-              top: 28px;
+              top: 30px;
             }
             @media (max-width: $small-tablet) {
               right: 19%;
               top: 30px;
             }
             @media (max-width: $mobile) {
-              right: 20%;
+              right: 24%;
               top: 22px;
             }
           }
@@ -1211,6 +1215,11 @@ ul.products {
   }
 }
 /* CHECKOUT PAGE */
+/* Checkout overlay style disable */
+.woocommerce .blockUI.blockOverlay {
+  position: relative !important;
+  display: none !important;
+}
 .woocommerce-checkout {
   .entry-title {
     display: block !important;
@@ -1427,15 +1436,45 @@ ul.products {
         }
         .payment_methods {
           border-bottom: 1px solid $color_text200;
-          .payment_method_pay_by_paynow_pl_pbl {
-            img { 
-              padding: 3px;
-              background-color: white;
-              margin-left: 5px;
+          // paynow
+          .payment_method_pay_by_paynow_pl {
+            &_pbl {
+              img {
+                padding: 3px;
+                background-color: white;
+                margin-left: 5px;
+              }
+            }
+            &_blik {
+              input {
+                text-align: center;
+                background-color: transparent;
+                border: 1px solid white;
+                color: white;
+                &::placeholder {
+                  color: white;
+                }
+              }
+              .col-md-4 {
+                text-align: center;
+                margin: 10px 0;
+                @media (max-width: $notebook) {
+                  width: 50%;
+                }
+                @media (max-width: $tablet) {
+                  width: 100%;
+                }
+                @media (max-width: $small_tablet) {
+                  width: 50%;
+                }
+                @media (max-width: $mobile) {
+                  width: 100%;
+                }
+              }
             }
           }
           .paynow-data-processing-info-less {
-            font-family: 'Manrope';
+            font-family: "Manrope";
           }
         }
         .woocommerce-terms-and-conditions-wrapper {
@@ -1491,7 +1530,8 @@ ul.products {
 
           .checkbox > span {
             color: #34495e;
-            padding: 0.5rem 0.25rem;
+            padding: 0;
+
           }
 
           .checkbox > input {
@@ -1571,13 +1611,49 @@ ul.products {
               top: 30px;
             }
             @media (max-width: $small-tablet) {
-              right: 36%;
-              top: 31px;
+              right: 40%;
+              top: 32px;
             }
             @media (max-width: $mobile) {
-              right: 16%;
+              right: 30%;
+              top: 32px;
             }
           }
+        }
+      }
+    }
+    /* paczkomat */
+    .paczkomaty-shipping {
+      td {
+        padding-left: 2.5rem;
+        @media (max-width: $tablet) {
+          padding-left: 0;
+        }
+        text-align: left;
+      }
+      .select2-selection {
+        border: 1px solid $color_gray200;
+        border-radius: 0;
+        &__rendered {
+          color: $color_text400;
+        }
+        &__placeholder {
+          color: $color_gray600;
+        }
+      }
+      #open-geowidget {
+        background-color: $color_primary400;
+        padding: 24px;
+        display: inline-block;
+        margin: 20px 0 10px;
+        font-size: 14px;
+        @media (max-width: $tablet) {
+          padding: 16px;
+        }
+        &:hover {
+          background-color: white;
+          color: $color_text400;
+          transition: all 0.3s;
         }
       }
     }

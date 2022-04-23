@@ -154,6 +154,10 @@ a.btn-primary:focus, a.btn-primary:active {
   color: white !important;
 }
 
+.wpgdprc-consent-modal .wpgdprc-content-modal__content {
+  color: #4A4952 !important;
+}
+
 /* FOOTER */
 @media (max-width: 1680px) {
   #footer .footer-main .container {
@@ -2437,6 +2441,13 @@ ul.products li.product .product-content .button::after {
   height: 12px;
 }
 
+@media (max-width: 1024px) {
+  .woocommerce .flexible-shipping-notice-container .woocommerce-info .button::after {
+    top: 30px;
+    right: 20%;
+  }
+}
+
 @media (max-width: 576px) {
   .woocommerce .flexible-shipping-notice-container .woocommerce-info .button::after {
     top: 21px;
@@ -2632,7 +2643,7 @@ ul.products li.product .product-content .button::after {
 @media (max-width: 1024px) {
   .woocommerce .checkout_coupon .featured-box .box-content .btn::after {
     right: 20%;
-    top: 28px;
+    top: 30px;
   }
 }
 
@@ -2645,7 +2656,7 @@ ul.products li.product .product-content .button::after {
 
 @media (max-width: 576px) {
   .woocommerce .checkout_coupon .featured-box .box-content .btn::after {
-    right: 20%;
+    right: 24%;
     top: 22px;
   }
 }
@@ -3321,6 +3332,12 @@ ul.products li.product .product-content .button::after {
 }
 
 /* CHECKOUT PAGE */
+/* Checkout overlay style disable */
+.woocommerce .blockUI.blockOverlay {
+  position: relative !important;
+  display: none !important;
+}
+
 .woocommerce-checkout .entry-title {
   display: block !important;
   font-size: 48px;
@@ -3542,6 +3559,7 @@ ul.products li.product .product-content .button::after {
   background-color: #22203c;
   margin-top: 1.6rem;
   padding: 1.2rem;
+  /* paczkomat */
 }
 
 @media (max-width: 768px) {
@@ -3681,8 +3699,60 @@ ul.products li.product .product-content .button::after {
   margin-left: 5px;
 }
 
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik input {
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik input::-webkit-input-placeholder {
+  color: white;
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik input:-ms-input-placeholder {
+  color: white;
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik input::-ms-input-placeholder {
+  color: white;
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik input::placeholder {
+  color: white;
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik .col-md-4 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+@media (max-width: 1680px) {
+  .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik .col-md-4 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik .col-md-4 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik .col-md-4 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik .col-md-4 {
+    width: 100%;
+  }
+}
+
 .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .paynow-data-processing-info-less {
-  font-family: 'Manrope';
+  font-family: "Manrope";
 }
 
 .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .woocommerce-terms-and-conditions-wrapper .woocommerce-privacy-policy-text p {
@@ -3744,7 +3814,7 @@ ul.products li.product .product-content .button::after {
 
 .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .woocommerce-terms-and-conditions-wrapper .checkbox > span {
   color: #34495e;
-  padding: 0.5rem 0.25rem;
+  padding: 0;
 }
 
 .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .woocommerce-terms-and-conditions-wrapper .checkbox > input {
@@ -3841,15 +3911,61 @@ ul.products li.product .product-content .button::after {
 
 @media (max-width: 768px) {
   .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order #place_order::after {
-    right: 36%;
-    top: 31px;
+    right: 40%;
+    top: 32px;
   }
 }
 
 @media (max-width: 576px) {
   .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order #place_order::after {
-    right: 16%;
+    right: 30%;
+    top: 32px;
   }
+}
+
+.woocommerce-checkout .checkout-order-review .paczkomaty-shipping td {
+  padding-left: 2.5rem;
+  text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .woocommerce-checkout .checkout-order-review .paczkomaty-shipping td {
+    padding-left: 0;
+  }
+}
+
+.woocommerce-checkout .checkout-order-review .paczkomaty-shipping .select2-selection {
+  border: 1px solid #F3F3F3;
+  border-radius: 0;
+}
+
+.woocommerce-checkout .checkout-order-review .paczkomaty-shipping .select2-selection__rendered {
+  color: #22203c;
+}
+
+.woocommerce-checkout .checkout-order-review .paczkomaty-shipping .select2-selection__placeholder {
+  color: #808285;
+}
+
+.woocommerce-checkout .checkout-order-review .paczkomaty-shipping #open-geowidget {
+  background-color: #2d8ecd;
+  padding: 24px;
+  display: inline-block;
+  margin: 20px 0 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .woocommerce-checkout .checkout-order-review .paczkomaty-shipping #open-geowidget {
+    padding: 16px;
+  }
+}
+
+.woocommerce-checkout .checkout-order-review .paczkomaty-shipping #open-geowidget:hover {
+  background-color: white;
+  color: #22203c;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 /* MY ACCOUNT */
