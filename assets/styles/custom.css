@@ -103,6 +103,57 @@ a.btn-primary:focus, a.btn-primary:active {
   }
 }
 
+/* COOKIES */
+.wpgdprc-consent-bar__inner .wpgdprc-consent-bar__notice,
+.wpgdprc-consent-bar__inner .wpgdprc-button {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  font-family: "Manrope";
+}
+
+.wpgdprc-consent-bar__inner .wpgdprc-button {
+  font-weight: 800;
+  border-radius: 0 !important;
+}
+
+.wpgdprc-consent-bar__inner .wpgdprc-button:hover {
+  color: #2d8ecd !important;
+  opacity: 1 !important;
+}
+
+.wpgdprc-consent-bar__inner .wpgdprc-button--accept:hover {
+  border: 1px solid #2d8ecd !important;
+  background-color: #22203c !important;
+  color: white !important;
+}
+
+.wpgdprc-consent-modal .wpgdprc-consent-modal__navigation-button {
+  color: #22203c !important;
+  line-height: 1.25 !important;
+  margin-bottom: 1rem !important;
+}
+
+.wpgdprc-consent-modal .wpgdprc-consent-modal__navigation-button:hover {
+  color: #2d8ecd !important;
+}
+
+.wpgdprc-consent-modal .wpgdprc-text--warning {
+  display: none;
+}
+
+.wpgdprc-consent-modal .wpgdprc-button {
+  background-color: #2d8ecd !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.wpgdprc-consent-modal .wpgdprc-button:hover {
+  background-color: #22203c !important;
+  color: white !important;
+}
+
 /* FOOTER */
 @media (max-width: 1680px) {
   #footer .footer-main .container {
