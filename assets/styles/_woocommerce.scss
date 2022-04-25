@@ -1444,6 +1444,20 @@ ul.products {
                 background-color: white;
                 margin-left: 5px;
               }
+              .payment_method_pay_by_paynow_pl_pbl {
+                img {
+                  padding: 0;
+                  margin-left: 0;
+                }
+                @media (max-width: $notebook) {
+                  label {
+                    padding: 3px;
+                  }
+                }
+                @media (max-width: $mobile) {
+                  margin: 10px 5px 10px;
+                }
+              }
             }
             &_blik {
               input {
