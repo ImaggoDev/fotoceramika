@@ -10,6 +10,7 @@ SidebarLimitElement();
 setTimeout( () => {
     setCanvasBgStyle();
     scrollToPersonalize();
+    custom_fpd_attr();
 }, 800);
 
 
@@ -42,4 +43,33 @@ function scrollToPersonalize() {
           });
     })
 
+}
+
+function custom_fpd_attr() {
+    let wrapper = document.querySelector('.fpd-product-checkout-form');
+    if(!wrapper) {
+        alert('zero');
+        return false;
+    }
+
+    let buttons = wrapper.querySelectorAll('button');
+
+    buttons.forEach((e)=>{
+        e.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            for(let item in e.dataset) {
+                let select = document.querySelector('select[name="'+item+'"]');
+                if(select) {
+                    select.value = e.dataset[item];
+                    select.dispatchEvent(new Event('change',{"bubbles": true}));
+                    // jQuery option: $('select[name="'+item+'"]').val( e.dataset[item] ).change();
+                }
+            }
+
+            buttons.forEach((btn)=>{
+                btn.classList.remove('is-active');
+            })
+            e.classList.add('is-active');
+        })
+    })
 }

@@ -32,11 +32,6 @@ add_action('wp_enqueue_scripts', 'register_scripts');
 // Woo
 add_filter('wc_product_sku_enabled', '__return_false');
 
-add_action('woocommerce_after_single_product_summary', function () {
-    echo '<div class="custom-product-designer" style="width: 100%; margin-bottom: 1rem;">';
-    do_action('fpd_product_designer');
-    echo '</div>';
-});
 
 /**
  *
@@ -120,7 +115,7 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 add_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 8);
 add_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 5);
 
-add_action('woocommerce_before_add_to_cart_form', 'custom_product_desc');
+add_action('woocommerce_single_product_summary', 'custom_product_desc', 20);
 
 function custom_product_desc()
 {
@@ -130,10 +125,51 @@ function custom_product_desc()
     if (empty($fpd)) {
         return false;
     }
+
     ob_start();
-    get_template_part('template-parts/content', 'fpd-product');
+    get_template_part('template-parts/content', 'fpd-product', array('id' => $post->ID));
     $html = ob_get_contents();
     ob_end_clean();
 
     echo $html;
 }
+
+add_action('wp', 'check_product_type');
+
+function check_product_type() {
+    global $post;
+    $fpd = get_post_meta($post->ID, 'fpd_product_settings');
+
+    if (empty($fpd)) {
+        return false;
+    }
+
+    // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
+    // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
+    remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+}
+
+
+add_action('custom_product_designer_variations', 'custom_product_designer_variations');
+
+function custom_product_designer_variations() {
+    global $post;
+    ob_start();
+    get_template_part('template-parts/content', 'fpd-product-checkout-form', array('id' => $post->ID));
+    $html = ob_get_contents();
+    ob_end_clean();
+    echo $html;
+}
+
+
+add_action('woocommerce_after_single_product_summary', function () {
+    echo '<div class="custom-product-designer" style="width: 100%; margin-bottom: 1rem;">';
+    do_action('fpd_product_designer');
+    do_action('custom_product_designer_variations');
+    add_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 50 );
+        echo '<div class="custom-product-designer-form">';
+            do_action( 'woocommerce_variable_add_to_cart');
+        echo '</div>';
+    echo '</div>';
+});
