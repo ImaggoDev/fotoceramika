@@ -2125,6 +2125,7 @@ ul.products {
 .fpd-product-checkout-form {
   background-color: #000;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   text-align: center;
