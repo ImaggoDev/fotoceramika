@@ -4967,8 +4967,15 @@ h2.resp-accordion {
   display: none !important;
 }
 
-.single-product .woocommerce-product-rating .star-rating:before,
 .single-product .woocommerce-product-rating .star-rating span:before {
+  font-family: "Porto" !important;
+  content: "\e852\e852\e852\e852\e852" !important;
+  color: #63baf2 !important;
+}
+
+.single-product .woocommerce-product-rating .star-rating:before {
+  font-family: "Porto" !important;
+  content: "\e853\e853\e853\e853\e853" !important;
   color: #63baf2 !important;
 }
 
