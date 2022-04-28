@@ -1217,8 +1217,7 @@ ul.products {
 /* CHECKOUT PAGE */
 /* Checkout overlay style disable */
 .woocommerce .blockUI.blockOverlay {
-  position: relative !important;
-  display: none !important;
+  background: $color_text400!important;
 }
 .woocommerce-checkout {
   .entry-title {
