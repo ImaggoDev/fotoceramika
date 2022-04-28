@@ -1217,8 +1217,7 @@ ul.products {
 /* CHECKOUT PAGE */
 /* Checkout overlay style disable */
 .woocommerce .blockUI.blockOverlay {
-  position: relative !important;
-  display: none !important;
+  background: $color_text400!important;
 }
 .woocommerce-checkout {
   .entry-title {
@@ -1443,6 +1442,20 @@ ul.products {
                 padding: 3px;
                 background-color: white;
                 margin-left: 5px;
+              }
+              .payment_method_pay_by_paynow_pl_pbl {
+                img {
+                  padding: 0;
+                  margin-left: 0;
+                }
+                @media (max-width: $notebook) {
+                  label {
+                    padding: 3px;
+                  }
+                }
+                @media (max-width: $mobile) {
+                  margin: 10px 5px 10px;
+                }
               }
             }
             &_blik {

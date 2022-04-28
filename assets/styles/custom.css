@@ -104,36 +104,120 @@ a.btn-primary:focus, a.btn-primary:active {
 }
 
 /* COOKIES */
-.wpgdprc-consent-bar__inner .wpgdprc-consent-bar__notice,
-.wpgdprc-consent-bar__inner .wpgdprc-button {
+.wpgdprc-consent-bar {
+  margin: 0;
+}
+
+.wpgdprc-consent-bar__inner {
+  border: 0;
+  border-radius: 0;
+  max-width: 100%;
+}
+
+.wpgdprc-consent-bar__container {
+  max-width: 70rem;
+  width: 70rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .wpgdprc-consent-bar__container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.wpgdprc-consent-bar__content {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wpgdprc-consent-bar__column:first-child {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.wpgdprc-consent-bar__column--settings {
+  display: none;
+}
+
+.wpgdprc-consent-bar .wpgdprc-consent-bar__notice p {
+  display: inline;
   font-size: 14px !important;
-  font-weight: 500 !important;
   font-family: "Manrope";
-}
-
-.wpgdprc-consent-bar__inner .wpgdprc-button {
-  font-weight: 800;
+  font-weight: 500 !important;
   border-radius: 0 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
-.wpgdprc-consent-bar__inner .wpgdprc-button:hover {
+.wpgdprc-consent-bar .wpgdprc-button {
+  font-size: 14px !important;
+  font-family: "Manrope";
+  font-weight: 500 !important;
+  border-radius: 0 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.wpgdprc-consent-bar .wpgdprc-button--settings {
+  display: inline;
+  padding: 0;
+  border-radius: 0 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  background-color: none !important;
+}
+
+.wpgdprc-consent-bar .wpgdprc-button--accept {
+  font-weight: 800 !important;
+  padding-right: 25px !important;
+  border-radius: 0 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  background-color: none !important;
+}
+
+.wpgdprc-consent-bar .wpgdprc-button--accept::after {
+  content: "";
+  display: inline-block;
+  background-image: url("../icons/icon_arrow_primary.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  right: -18%;
+  top: 1px;
+  width: 7.41px;
+  height: 12px;
+}
+
+.wpgdprc-consent-bar .wpgdprc-button--accept:hover, .wpgdprc-consent-bar .wpgdprc-button--settings:hover {
   color: #2d8ecd !important;
-  opacity: 1 !important;
+  background: #171c21 !important;
+  border: 1px solid #171c21 !important;
 }
 
-.wpgdprc-consent-bar__inner .wpgdprc-button--accept:hover {
-  border: 1px solid #2d8ecd !important;
-  background-color: #22203c !important;
-  color: white !important;
+@media (max-width: 768px) {
+  .wpgdprc-consent-bar .wpgdprc-consent-bar__notice {
+    text-align: center;
+  }
+  .wpgdprc-consent-bar .wpgdprc-consent-bar__notice p {
+    font-size: 12px !important;
+  }
+  .wpgdprc-consent-bar .wpgdprc-button {
+    font-size: 12px !important;
+  }
 }
 
-.wpgdprc-consent-modal .wpgdprc-consent-modal__navigation-button {
+.wpgdprc-consent-modal__navigation-button {
   color: #22203c !important;
   line-height: 1.25 !important;
   margin-bottom: 1rem !important;
 }
 
-.wpgdprc-consent-modal .wpgdprc-consent-modal__navigation-button:hover {
+.wpgdprc-consent-modal__navigation-button:hover {
   color: #2d8ecd !important;
 }
 
@@ -154,7 +238,7 @@ a.btn-primary:focus, a.btn-primary:active {
   color: white !important;
 }
 
-.wpgdprc-consent-modal .wpgdprc-content-modal__content {
+.wpgdprc-consent-modal__content {
   color: #4A4952 !important;
 }
 
@@ -3334,8 +3418,7 @@ ul.products li.product .product-content .button::after {
 /* CHECKOUT PAGE */
 /* Checkout overlay style disable */
 .woocommerce .blockUI.blockOverlay {
-  position: relative !important;
-  display: none !important;
+  background: #22203c !important;
 }
 
 .woocommerce-checkout .entry-title {
@@ -3697,6 +3780,23 @@ ul.products li.product .product-content .button::after {
   padding: 3px;
   background-color: white;
   margin-left: 5px;
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_pbl .payment_method_pay_by_paynow_pl_pbl img {
+  padding: 0;
+  margin-left: 0;
+}
+
+@media (max-width: 1680px) {
+  .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_pbl .payment_method_pay_by_paynow_pl_pbl label {
+    padding: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+  .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_pbl .payment_method_pay_by_paynow_pl_pbl {
+    margin: 10px 5px 10px;
+  }
 }
 
 .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .payment_method_pay_by_paynow_pl_blik input {
