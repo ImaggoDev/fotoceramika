@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:    
+      - main
+      
+name: Build and Publish on development imaggo-work.pl
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: imaggo.ftp.dhosting.pl
+        username: zei3ku_owline2
+        password: 4mtA5vQb2L
+        server-dir: /fotoceramika.imaggo-work.pl/public_html/wp-content/themes/porto-child/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.idea/**
