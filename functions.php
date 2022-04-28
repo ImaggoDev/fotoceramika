@@ -224,13 +224,112 @@ function my_acf_json_load_point( $paths ) {
 }
 
 
-//add_filter('acf/json_directory', function ($path) {
-//    return get_stylesheet_directory() . '/acf-json';
-//});
-//
-//
-//add_filter('acf/settings/load_json', function ($paths) {
-//    return [
-//        apply_filters("acf/json_directory", NULL)
-//    ];
-//});
+
+/**
+ * 
+ * Woocommerce my account nav
+ * 
+ */
+
+add_filter ( 'woocommerce_account_menu_items', 'custom_myaccount_nav' );
+
+function custom_myaccount_nav( $menu_links ){
+	
+    unset( $menu_links['edit-address'] ); 
+	unset( $menu_links['dashboard'] ); 
+	unset( $menu_links['orders'] ); 
+	unset( $menu_links['downloads'] ); 
+	unset( $menu_links['edit-account'] ); 
+	unset( $menu_links['customer-logout'] ); 
+
+    $menu_links['dashboard'] = 'Kokpit';
+	$menu_links['edit-account'] = 'Dane osobowe';
+    $menu_links['orders'] = 'Zamówienia';
+    $menu_links['edit-address'] = 'Adresy';
+    $menu_links['customer-logout'] = 'Wyloguj się';
+
+	return $menu_links;
+}
+
+/**
+ * 
+ * Woocommerce delete field display name user 
+ * 
+ */
+
+add_filter('woocommerce_save_account_details_required_fields', 'account_details_required_fields' );
+function account_details_required_fields( $required_fields ){
+    unset( $required_fields['account_display_name'] );
+    return $required_fields;
+}
+
+/**
+ * 
+ * Woocommerce orders column change name 
+ * 
+ */
+
+function filter_woocommerce_account_orders_columns( $columns ) {    
+    $columns['order-actions'] = __( 'Akcje', 'woocommerce' );
+    return $columns;
+}
+add_filter( 'woocommerce_account_orders_columns', 'filter_woocommerce_account_orders_columns', 10, 1 );
+
+
+/**
+ * paczkomat usuniecie opcji za pobraniem 
+ */
+add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_paczkomat_cod' );
+  
+function gateway_disable_paczkomat_cod( $available_gateways ) {   
+   if ( ! is_admin() ) {
+        
+      $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+      $chosen_shipping = $chosen_methods[0];
+        
+      if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:1' ) ) {
+        unset( $available_gateways['cod'] );
+      }
+   }
+   return $available_gateways;   
+}
+
+/**
+ * inpost kurier usuniecie opcji za pobraniem 
+ */
+add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_inpost_cod' );
+  
+function gateway_disable_inpost_cod( $available_gateways ) {   
+   if ( ! is_admin() ) {
+        
+      $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+      $chosen_shipping = $chosen_methods[0];
+        
+      if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:3' ) ) {
+        unset( $available_gateways['cod'] );
+      }
+   }
+   return $available_gateways;   
+}
+
+/**
+ * inpost kurier pobranie  usuniecie opcji platnosci online
+ */
+add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_inpost_online_payment' );
+  
+function gateway_disable_inpost_online_payment( $available_gateways ) {   
+   if ( ! is_admin() ) {
+        
+      $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+      $chosen_shipping = $chosen_methods[0];
+        
+      if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:2' ) ) {
+        unset( $available_gateways['bacs'] );
+        unset( $available_gateways['pay_by_paynow_pl_google_pay'] );
+        unset( $available_gateways['pay_by_paynow_pl_pbl'] );
+        unset( $available_gateways['pay_by_paynow_pl_blik'] );
+      }
+   }
+   return $available_gateways;   
+}
+
