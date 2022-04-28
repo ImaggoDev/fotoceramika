@@ -48,7 +48,6 @@ function scrollToPersonalize() {
 function custom_fpd_attr() {
     let wrapper = document.querySelector('.fpd-product-checkout-form');
     if(!wrapper) {
-        alert('zero');
         return false;
     }
 

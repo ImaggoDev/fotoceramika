@@ -93,22 +93,6 @@ function rename_additional_info_tab($tabs)
 
 }
 
-// ACF SYnc
-add_filter('acf/json_directory', function ($path) {
-    return get_template_directory() . '/acf-json';
-});
-
-add_filter('acf/settings/save_json', function ($path) {
-    return apply_filters("acf/json_directory", NULL);
-
-});
-
-add_filter('acf/settings/load_json', function ($paths) {
-    return [
-        apply_filters("acf/json_directory", NULL)
-    ];
-});
-
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
 
@@ -146,6 +130,7 @@ function check_product_type() {
 
     // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
     // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
+
     remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 }
@@ -173,3 +158,79 @@ add_action('woocommerce_after_single_product_summary', function () {
         echo '</div>';
     echo '</div>';
 });
+
+
+add_action('init', function(){
+
+    if( function_exists('acf_add_options_page') ) {
+        acf_add_options_page(array(
+            'page_title' 	=> 'Opcje motywu',
+            'menu_title'	=> 'Opcje motywu',
+            'menu_slug' 	=> 'theme-general-settings',
+            'capability'	=> 'edit_posts',
+            'redirect'		=> false
+        ));
+    }
+
+});
+
+
+
+add_action('woocommerce_after_add_to_cart_button', 'add_baner_to_product');
+
+function add_baner_to_product() {
+
+    if(!function_exists('acf_add_options_page') ) {
+        return false;
+    }
+
+    global $post;
+    $id = $post->ID;
+    $terms = get_the_terms($id, 'product_cat');
+
+    // baners
+    $baners = get_field('promo-banner', 'option');
+    foreach($terms ?? [] as $term) {
+        $term_id = $term->term_id;
+        foreach($baners ?? [] as $baner) {
+            if(isset($baner['product-category'][0]) && $term_id === $baner['product-category'][0]) {
+                echo "<div class='promo-baner'>" . $baner['text'] . "</div>";
+            }
+        }
+    }
+}
+
+// ACF SYnc
+
+
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+function my_acf_json_save_point( $path ) {
+    // update path
+    $path = get_stylesheet_directory() . '/acf-json';
+    // return
+    return $path;
+}
+
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+
+function my_acf_json_load_point( $paths ) {
+    // remove original path (optional)
+    unset($paths[0]);
+    // append path
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+
+    // return
+    return $paths;
+}
+
+
+//add_filter('acf/json_directory', function ($path) {
+//    return get_stylesheet_directory() . '/acf-json';
+//});
+//
+//
+//add_filter('acf/settings/load_json', function ($paths) {
+//    return [
+//        apply_filters("acf/json_directory", NULL)
+//    ];
+//});
