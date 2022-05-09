@@ -73,11 +73,27 @@
   .main-content-wrap {
     margin-top: 15px;
   }
+  // loop bottom
+  .shop-loop-after .woocommerce-viewing {
+    display: none;
+  }
+  .archive-products {
+    min-height: 100vh;
+    @media (max-width: $small-tablet) {
+      min-height: auto;
+    }
+  }
 }
 // products
 ul.products {
   li.product {
     margin-bottom: 35px;
+    .product-image:hover {
+      opacity: 0.8;
+    }
+    a:hover {
+      opacity: 1;
+    }
     .labels {
       top: 20px;
       left: 20px;
@@ -110,39 +126,49 @@ ul.products {
           font-size: 20px;
         }
       }
-      .star-rating {
-        font-size: 23px;
-        width: 5.9em;
-        margin-right: 0;
-        margin-left: 20px;
-        top: 2px;
-        @media (max-width: $tablet) {
-          font-size: 18px;
-        }
-        &:before {
-          font-family: "Porto" !important;
-          content: "\e853\e853\e853\e853\e853" !important;
-          color: $color_primary400 !important;
-        }
-        /* Safari 10.1+ */
-        @media not all and (min-resolution: 0.001dpcm) {
-          @supports (-webkit-appearance: none) {
-            span {
-              left: 2.6px;
+      .woocommerce-product-rating {
+        justify-content: center;
+        .star-rating {
+          font-size: 23px;
+          width: 5em;
+          margin-right: 0;
+          margin-left: 0;
+          top: 2px;
+          cursor: default;
+          @media (max-width: $tablet) {
+            font-size: 18px;
+          }
+          &:before {
+            font-family: "Porto" !important;
+            content: "\e853\e853\e853\e853\e853" !important;
+            color: $color_primary400 !important;
+          }
+          span:before {
+            font-family: "Porto" !important;
+            content: "\e852\e852\e852\e852\e852" !important;
+            color: $color_primary400 !important;
+            width: 5em;
+          }
+          /* Safari 10.1+ */
+          @media not all and (min-resolution: 0.001dpcm) {
+            @supports (-webkit-appearance: none) {
+              width: 5.65em;
+              span {
+                left: 2.1px;
+              }
+              span:before {
+                width: 5.8em;
+              }
             }
           }
         }
-        span:before {
-          font-family: "Porto" !important;
-          content: "\e852\e852\e852\e852\e852" !important;
-          color: $color_primary400 !important;
-          width: 5.9em;
-        }
       }
       .review-link {
-        margin-left: -10px;
+        margin-left: 10px;
+        vertical-align: text-bottom;
         .woocommerce-review {
           color: $color_text400;
+          font-size: 12px;
         }
       }
       .price {
@@ -164,6 +190,7 @@ ul.products {
         letter-spacing: 0.0105em;
         padding: 24px 58px 24px 24px;
         margin-top: 10px;
+        cursor: pointer;
         &:hover {
           background-color: $color_text400;
           transition: all 0.3s;
@@ -182,6 +209,32 @@ ul.products {
           width: 7.41px;
           height: 12px;
         }
+        &.add_to_cart_button {
+          font-family: "Manrope";
+          background-color: $color_primary400;
+          padding: 24px 58px 24px 24px;
+          height: auto;
+          line-height: 1.5 !important;
+          color: white;
+          font-size: 14px;
+          font-weight: 800;
+          text-transform: inherit;
+          &::after {
+            top: 24px;
+            right: 14%;
+            width: 16px;
+            height: 20px;
+            background-image: url("../icons/icon_add_to_cart_basket.svg");
+          }
+        }
+      }
+    }
+    &:hover {
+      .add_to_cart_button {
+        padding: 24px 58px 24px 24px !important;
+        border-color: transparent !important;
+        background-color: $color_text400 !important;
+        transition: all 0.3s;
       }
     }
   }
@@ -385,8 +438,18 @@ ul.products {
         }
       }
     }
-    .woocommerce-product-rating:after {
+    .woocommerce-product-rating {
       display: none;
+    }
+    .owl-carousel.nav-pos-outside .owl-nav {
+      .owl-next {
+        right: 15px;
+        color: $color_primary400;
+      }
+      .owl-prev {
+        left: 15px;
+        color: $color_primary400;
+      }
     }
   }
   // related
@@ -431,6 +494,32 @@ ul.products {
         top: 0 !important;
         width: 20%;
         margin: auto;
+      }
+    }
+  }
+  // reviews
+  .woocommerce-Reviews {
+    .star-rating span:before {
+      font-family: "Porto" !important;
+      content: "\e852\e852\e852\e852\e852" !important;
+      color: $color_primary400 !important;
+    }
+    
+    .star-rating:before {
+      font-family: "Porto" !important;
+      content: "\e853\e853\e853\e853\e853" !important;
+      color: $color_primary400 !important;
+    }
+    
+    #review_form {
+      @media (max-width: $small-tablet) {
+        .comment-form-cookies-consent {
+          display: flex;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+          margin-top: 7px;
+        }
       }
     }
   }
@@ -767,12 +856,13 @@ ul.products {
         }
       }
       .product-remove {
-        padding: 12px 10px 28px 40px;
+        padding: 0px 10px 28px 40px;
         @media (max-width: $small-tablet) {
           padding: 12px 20px 28px 10px;
         }
         .remove {
           position: relative;
+          display: inline-block;
           .icon_remove_item {
             background-image: url("../icons/icon_remove.svg");
             background-repeat: no-repeat;
@@ -1080,7 +1170,7 @@ ul.products {
           color: white;
           h4 {
             position: relative;
-            top: -75px;
+            vertical-align: top;
             display: inline-block;
             width: 25%;
             text-transform: inherit;
@@ -1099,11 +1189,15 @@ ul.products {
             @media (max-width: $mobile) {
               width: 100%;
             }
+            li {
+              cursor: pointer;
+            }
             .porto-radio .porto-control-label {
               font-size: 16px;
               font-weight: 500 !important;
               font-family: "Manrope";
               padding-left: 15px;
+              cursor: pointer;
               @media (max-width: $mobile) {
                 font-size: 14px;
               }
@@ -1215,11 +1309,12 @@ ul.products {
   }
 }
 /* CHECKOUT PAGE */
-/* Checkout overlay style disable */
-.woocommerce .blockUI.blockOverlay {
-  background: $color_text400!important;
-}
+
 .woocommerce-checkout {
+  /* Checkout overlay style disable */
+  .blockUI.blockOverlay {
+    // background: $color_text400 !important;
+  }
   .entry-title {
     display: block !important;
     font-size: 48px;
@@ -1510,6 +1605,7 @@ ul.products {
               font-size: 12px;
               color: white;
               margin-left: 35px;
+              text-align: justify;
               a {
                 color: white;
                 text-decoration: underline;
@@ -1544,7 +1640,6 @@ ul.products {
           .checkbox > span {
             color: #34495e;
             padding: 0;
-
           }
 
           .checkbox > input {
@@ -1644,14 +1739,26 @@ ul.products {
         }
         text-align: left;
       }
-      .select2-selection {
-        border: 1px solid $color_gray200;
-        border-radius: 0;
-        &__rendered {
-          color: $color_text400;
+      .select2-container {
+        @media (max-width: $mobile) {
+          width: 100% !important;
         }
-        &__placeholder {
-          color: $color_gray600;
+        .select2-selection {
+          border: 1px solid $color_gray200;
+          border-radius: 0;
+          &__rendered {
+            color: $color_text400;
+          }
+          &__placeholder {
+            color: $color_gray600;
+          }
+          &__clear {
+            margin-left: 1.5rem;
+            font-size: 21px;
+          }
+          &__arrow {
+            right: 2.5rem;
+          }
         }
       }
       #open-geowidget {
@@ -1672,6 +1779,16 @@ ul.products {
     }
   }
 }
+/* order received */
+.woocommerce-order-received {
+  @media (max-width: $mobile) {
+    h2,
+    .entry-title {
+      font-size: 24px;
+    }
+  }
+}
+
 /* MY ACCOUNT */
 .woocommerce-account {
   .entry-title {
@@ -1915,6 +2032,16 @@ ul.products {
           }
         }
       }
+      // orders details
+      .woocommerce-order-details {
+        h2 {
+          font-size: 20px;
+          font-weight: 500;
+          color: $color_text400;
+          margin-bottom: 0;
+          margin-left: 0;
+        }
+      }
     }
   }
   // login
@@ -1941,19 +2068,19 @@ ul.products {
   display: flex;
   flex-direction: column;
 
-  &>* {
+  & > * {
     order: 5;
   }
 
-  &>.product-summary-wrap {
+  & > .product-summary-wrap {
     order: 1;
   }
 
-  &>.woocommerce-tabs {
+  & > .woocommerce-tabs {
     order: 3;
   }
 
-  &>.custom-product-designer {
+  & > .custom-product-designer {
     order: 2;
     aspect-ratio: 2 / 1;
   }
@@ -1963,6 +2090,19 @@ ul.products {
   background-size: cover !important;
 }
 
+.fpd-topbar .fpd-navigation > div > span {
+  @media (max-width: $small-tablet) {
+    padding-top: 4px;
+  }
+}
+.fpd-draggable-dialog {
+  @media (max-width: $tablet) {
+    height: 20vh;
+  }
+  @media (max-width: $mobile) {
+    height: 25vh;
+  }
+}
 
 .product-layout-transparent .product-summary-wrap,
 .product-layout-transparent .img-thumbnail,
@@ -1978,7 +2118,6 @@ ul.products {
   letter-spacing: -0.015em;
 }
 
-
 .single-product .product_title {
   font-size: 3rem;
   line-height: 1.2;
@@ -1987,17 +2126,16 @@ ul.products {
   font-weight: 500;
   margin-bottom: 0.2em;
 
-  &+.price {
+  & + .price {
     font-size: 1.25rem;
     font-weight: 500;
     margin-top: 1rem;
   }
 }
 
-
 .button-personalize-fpd {
   position: relative;
-  padding: 1rem 2.5rem 1rem 1.5rem;
+  padding: 1.5rem 3rem 1.5rem 2.1rem;
   font-weight: 800;
   font-size: 0.875rem;
 
@@ -2007,7 +2145,7 @@ ul.products {
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    right: 1rem;
+    right: 1.2rem;
     top: 50%;
     margin-top: -4px;
     width: 7.41px;
@@ -2025,12 +2163,10 @@ ul.products {
   // & .variations_form { display: none !important; }
 }
 
-
 .fpd-addons {
-
   &__wrapper {
     margin-top: 1rem;
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
     padding: 2rem;
   }
 
@@ -2043,7 +2179,7 @@ ul.products {
       position: relative;
       padding-left: 2rem;
       font-size: 1rem;
-      border-bottom: 1px solid #E1E1E1;
+      border-bottom: 1px solid #e1e1e1;
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
 
@@ -2067,16 +2203,18 @@ ul.products {
     justify-content: space-between;
     align-items: start;
 
-    &>.button {
+    & > .button {
       margin-top: 1rem;
       position: relative;
-      padding: 1rem 2.5rem 1rem 1.5rem;
+      padding: 1rem 3.13rem 1rem 2.13rem;
       font-weight: 800;
       font-size: 0.875rem;
-      background-color: #22203C;
+      background-color: #22203c;
       min-height: 72px;
       line-height: 3;
-
+      @media (max-width: $mobile) {
+        line-height: 3.7;
+      }
       &:hover {
         opacity: 0.8;
       }
@@ -2087,7 +2225,7 @@ ul.products {
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
-        right: 1rem;
+        right: 1.5rem;
         top: 50%;
         margin-top: -4px;
         width: 7.41px;
@@ -2103,13 +2241,14 @@ ul.products {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 3.33vw;
+  padding: 1.25rem 3.2vw;
   margin: 1rem 0 0 0;
   min-height: 72px;
 
   &__text {
     display: block;
     font-size: 0.875rem;
+    font-weight: 500;
     line-height: 1;
     padding-left: 2rem;
 
@@ -2118,6 +2257,7 @@ ul.products {
       font-size: 1.225rem;
       font-weight: 800;
       color: $color_primary400;
+      padding-top: 0.3rem;
     }
   }
 }
@@ -2260,7 +2400,8 @@ ul.products {
       align-items: stretch;
       background-color: #fff;
 
-      & button, input {
+      & button,
+      input {
         height: 100%;
         width: 3rem;
         border: none;
@@ -2292,13 +2433,20 @@ ul.products {
   }
 }
 
+<<<<<<< HEAD
+.fpd-navigation > div {
+=======
 .fpd-navigation>div {
+>>>>>>> origin/main
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/main
 .fpd-navigation .fpd-label {
   text-transform: none !important;
   font-size: 0.875rem !important;
@@ -2330,12 +2478,20 @@ ul.products {
 .promo-baner {
   background-color: $color_danger400;
   color: #fff;
+<<<<<<< HEAD
+  font-size: 0.875rem !important;
+=======
   font-size: 0.875rem!important;
+>>>>>>> origin/main
   font-weight: 800;
   padding: 1.5rem;
 }
 
+<<<<<<< HEAD
+.single-product .single_variation > div:not(:empty) {
+=======
 .single-product .single_variation>div:not(:empty) {
+>>>>>>> origin/main
   margin-bottom: 1rem;
 }
 
@@ -2349,7 +2505,10 @@ ul.products {
   align-self: flex-start;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/main
 .product-thumbnails {
   position: relative;
 
@@ -2392,11 +2551,21 @@ h2.resp-accordion {
   display: none !important;
 }
 
+<<<<<<< HEAD
+.single-product .woocommerce-product-rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .star-rating {
+    cursor: default;
+  }
+=======
 .woocommerce-product-rating {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
+>>>>>>> origin/main
   & > .review-link {
     font-size: 0;
 
@@ -2424,13 +2593,21 @@ h2.resp-accordion {
 .single-product .woocommerce-product-rating .star-rating span:before {
   font-family: "Porto" !important;
   content: "\e852\e852\e852\e852\e852" !important;
+<<<<<<< HEAD
+  color: $color_primary400 !important;
+=======
   color: $color_primary200 !important;
+>>>>>>> origin/main
 }
 
 .single-product .woocommerce-product-rating .star-rating:before {
   font-family: "Porto" !important;
   content: "\e853\e853\e853\e853\e853" !important;
+<<<<<<< HEAD
+  color: $color_primary400 !important;
+=======
   color: $color_primary200 !important;
+>>>>>>> origin/main
 }
 
 a:hover {
@@ -2449,6 +2626,13 @@ a:hover {
     font-size: 1rem;
     margin-right: 30px !important;
   }
+<<<<<<< HEAD
+  @media all and (max-width: $mobile) {
+    font-size: 0.875rem;
+    margin-right: 25px !important;
+  }
+=======
+>>>>>>> origin/main
 }
 
 .comment-form-rating {
@@ -2457,4 +2641,8 @@ a:hover {
 
 .comment-form-rating .stars span a:before {
   color: $color_primary200 !important;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

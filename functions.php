@@ -333,3 +333,7 @@ function gateway_disable_inpost_online_payment( $available_gateways ) {
    return $available_gateways;   
 }
 
+add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );  
+function woocommerce_custom_product_add_to_cart_text() {
+    return __( 'Dodaj do koszyka', 'woocommerce' );
+}

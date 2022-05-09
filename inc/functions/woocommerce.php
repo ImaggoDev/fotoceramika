@@ -2497,7 +2497,7 @@ if ( ! function_exists( 'porto_woocommerce_add_to_cart_notification_html' ) ) :
 				<div class="msg-box">
 					<div class="msg">
 						<?php /* translators: product name div */ ?>
-						<?php printf( esc_html__( '%s has been added to your cart.', 'porto' ), '<div class="product-name"></div>' ); ?>
+						<?php printf( esc_html__( '%s został dodany do Twojego koszyka.', 'porto' ), '<div class="product-name"></div>' ); ?>
 					</div>
 				</div>
 				<button class="btn btn-modern btn-sm btn-gray viewcart btn-sm" data-link=""><?php esc_html_e( 'View Cart', 'porto' ); ?></button>
@@ -2600,7 +2600,7 @@ function porto_add_to_cart_message_html( $message, $products, $show_qty ) {
 
 	$titles = array_filter( $titles );
 	/* translators: %s: product name */
-	$added_text = sprintf( _n( '<strong class="single-cart-notice">%s</strong> <span class="font-weight-medium">has been added to your cart.</span>', '<strong class="single-cart-notice">%s</strong> <span class="font-weight-medium">have been added to your cart.</span>', $count, 'porto' ), wc_format_list_of_items( $titles ) );
+	$added_text = sprintf( _n( '<strong class="single-cart-notice">%s</strong> <span class="font-weight-medium">został dodany do koszyka.</span>', '<strong class="single-cart-notice">%s</strong> <span class="font-weight-medium">have been added to your cart.</span>', $count, 'porto' ), wc_format_list_of_items( $titles ) );
 	// Output success messages.
 	if ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
 		$return_to = apply_filters( 'woocommerce_continue_shopping_redirect', wc_get_raw_referer() ? wp_validate_redirect( wc_get_raw_referer(), false ) : wc_get_page_permalink( 'shop' ) );

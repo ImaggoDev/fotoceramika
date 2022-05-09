@@ -101,6 +101,11 @@
       }
     }
     .post-image {
+      img {
+        min-height: 250px;
+        max-height: 250px;
+        object-fit: cover;
+      }
       .post-date {
         right: auto;
         left: 22px;
@@ -203,10 +208,11 @@
       padding-left: 1rem;
     }
     .post-slide {
-      margin-top: 2rem;
+      margin-top: 0;
       .post-item-small {
         border-top: 0;
         padding-top: 25px;
+        padding-bottom: 0;
         .post-image img {
           width: 69px;
           @media (max-width: $tablet) {
@@ -324,6 +330,23 @@
       font-size: 12px;
     }
   }
+  /* Related post */
+  .related-posts {
+    .sub-title {
+      margin-bottom: 18px;
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 42px;
+      color: $color_text400;
+      text-transform: inherit;
+    }
+    .tall {
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+  }
 }
 
 /* Related post */
@@ -409,6 +432,7 @@
       margin-top: 10px;
       .icon_btn_arrow {
         margin-left: 10px;
+        display: inline-block;
       }
       &:hover {
         color: $color_primary400;

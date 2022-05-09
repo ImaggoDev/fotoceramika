@@ -42,7 +42,7 @@ if ( $show_cats && wp_is_mobile() ) {
 			wp_dropdown_categories( $args );
 		}
 		?>
-		<span class="button-wrap"><button class="btn" id="yith-searchsubmit" title="<?php esc_attr_e( 'Search', 'woocommerce' ); ?>" type="submit"><i class="fas fa-search"></i></button></span>
+		<span class="button-wrap"><button class="btn" id="yith-searchsubmit" title="<?php esc_attr_e( 'Szukaj', 'woocommerce' ); ?>" type="submit"><i class="fas fa-search"></i></button></span>
 		<input type="hidden" name="post_type" value="product" />
 		<?php if ( defined( 'ICL_LANGUAGE_CODE' ) ) : ?>
 			<input type="hidden" name="lang" value="<?php echo( ICL_LANGUAGE_CODE ); ?>" />

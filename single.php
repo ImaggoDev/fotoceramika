@@ -54,10 +54,11 @@ $options = json_encode( $options );
 				$related_posts = porto_get_related_posts( $post->ID );
 				if ( $related_posts->have_posts() ) :
 					?>
-					<hr class="tall"/>
+					
 					<div class="related-posts">
 						<?php /* translators: $1 and $2 opening and closing strong tags respectively */ ?>
 						<h4 class="sub-title"><?php printf( esc_html__( 'Podobne wpisy', 'porto' ), '<strong>', '</strong>' ); ?></h4>
+						<hr class="tall"/>
 						<div class="row">
 							<div class="post-carousel porto-carousel owl-carousel show-nav-title" data-plugin-options="<?php echo esc_attr( $options ); ?>">
 							<?php

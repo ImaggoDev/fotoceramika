@@ -25,14 +25,26 @@
     }
   }
   .owl-carousel.nav-pos-inside .owl-nav {
-    .disabled {
-      opacity: 1;
-    }
     .owl-prev {
       left: 6%;
+      &:hover {
+        color: $color_primary400;
+        transition: all 0.3s;
+      }
     }
     .owl-next {
       right: 6%;
+      &:hover {
+        color: $color_primary400;
+        transition: all 0.3s;
+      }
+    }
+    .disabled {
+      opacity: 1;
+      &:hover {
+        color: white;
+        transition: all 0.3s;
+      }
     }
   }
   // 3 cols icon
@@ -52,6 +64,11 @@
     }
     .porto-sicon-header + .porto-sicon-description {
       margin-top: 8px;
+    }
+    @media (max-width: $mobile) {
+      .porto-sicon-box {
+        border-right: 0;
+      }
     }
   }
   // heading
@@ -85,12 +102,17 @@
     &:hover {
       color: $color_primary400;
     }
+    &:focus,
+    &:active {
+      border: 0;
+      box-shadow: none;
+    }
   }
   // image block
   .home_block_image {
-    padding: 0!important;
+    padding: 0 !important;
     a.btn-primary:hover {
-      background-color: transparent!important;
+      background-color: transparent !important;
     }
     .home_block_image_col {
       max-width: 1920px;
@@ -103,6 +125,9 @@
       }
       @media (max-width: $tablet) {
         margin: 50px 20px;
+      }
+      @media (max-width: $mobile) {
+        margin: 50px 20px 0;
       }
       h3.porto-heading {
         margin-top: 40px;
@@ -162,6 +187,9 @@
       @media (max-width: $small_tablet) {
         margin-top: 50px;
       }
+      @media (max-width: $mobile) {
+        margin-top: 10px;
+      }
     }
   }
   @media (max-width: $tablet) {
@@ -180,7 +208,7 @@
     .home-slider {
       .owl-item {
         img {
-          opacity: 0.3;
+          opacity: 0.1;
         }
         .porto-ibanner-container {
           margin: 0 40px;
