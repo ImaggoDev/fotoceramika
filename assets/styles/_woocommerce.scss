@@ -2433,20 +2433,12 @@ ul.products {
   }
 }
 
-<<<<<<< HEAD
 .fpd-navigation > div {
-=======
-.fpd-navigation>div {
->>>>>>> origin/main
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
 .fpd-navigation .fpd-label {
   text-transform: none !important;
   font-size: 0.875rem !important;
@@ -2478,20 +2470,12 @@ ul.products {
 .promo-baner {
   background-color: $color_danger400;
   color: #fff;
-<<<<<<< HEAD
   font-size: 0.875rem !important;
-=======
-  font-size: 0.875rem!important;
->>>>>>> origin/main
   font-weight: 800;
   padding: 1.5rem;
 }
 
-<<<<<<< HEAD
 .single-product .single_variation > div:not(:empty) {
-=======
-.single-product .single_variation>div:not(:empty) {
->>>>>>> origin/main
   margin-bottom: 1rem;
 }
 
@@ -2505,10 +2489,6 @@ ul.products {
   align-self: flex-start;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
 .product-thumbnails {
   position: relative;
 
@@ -2551,7 +2531,6 @@ h2.resp-accordion {
   display: none !important;
 }
 
-<<<<<<< HEAD
 .single-product .woocommerce-product-rating {
   display: flex;
   justify-content: flex-start;
@@ -2559,13 +2538,6 @@ h2.resp-accordion {
   .star-rating {
     cursor: default;
   }
-=======
-.woocommerce-product-rating {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
->>>>>>> origin/main
   & > .review-link {
     font-size: 0;
 
@@ -2593,21 +2565,13 @@ h2.resp-accordion {
 .single-product .woocommerce-product-rating .star-rating span:before {
   font-family: "Porto" !important;
   content: "\e852\e852\e852\e852\e852" !important;
-<<<<<<< HEAD
   color: $color_primary400 !important;
-=======
-  color: $color_primary200 !important;
->>>>>>> origin/main
 }
 
 .single-product .woocommerce-product-rating .star-rating:before {
   font-family: "Porto" !important;
   content: "\e853\e853\e853\e853\e853" !important;
-<<<<<<< HEAD
   color: $color_primary400 !important;
-=======
-  color: $color_primary200 !important;
->>>>>>> origin/main
 }
 
 a:hover {
@@ -2626,13 +2590,10 @@ a:hover {
     font-size: 1rem;
     margin-right: 30px !important;
   }
-<<<<<<< HEAD
   @media all and (max-width: $mobile) {
     font-size: 0.875rem;
     margin-right: 25px !important;
   }
-=======
->>>>>>> origin/main
 }
 
 .comment-form-rating {
@@ -2641,8 +2602,4 @@ a:hover {
 
 .comment-form-rating .stars span a:before {
   color: $color_primary200 !important;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main
