@@ -1,0 +1,268 @@
+/** HOME PAGE **/
+.home {
+  .container-fluid {
+    padding: 0;
+    @media (max-width: $notebook) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media (max-width: $small_tablet) {
+      padding: 0 5px;
+    }
+  }
+  // Hero
+  .home_hero {
+    .btn {
+      text-transform: inherit;
+      padding: 24px;
+      &:hover {
+        border: 1px solid $color_text400;
+      }
+      span {
+        font-size: 14px;
+        font-weight: 800;
+      }
+    }
+  }
+  .owl-carousel.nav-pos-inside .owl-nav {
+    .owl-prev {
+      left: 6%;
+      &:hover {
+        color: $color_primary400;
+        transition: all 0.3s;
+      }
+    }
+    .owl-next {
+      right: 6%;
+      &:hover {
+        color: $color_primary400;
+        transition: all 0.3s;
+      }
+    }
+    .disabled {
+      opacity: 1;
+      &:hover {
+        color: white;
+        transition: all 0.3s;
+      }
+    }
+  }
+  // 3 cols icon
+  .owl-stage-outer {
+    .owl-item:nth-of-type(3) {
+      .porto-sicon-box {
+        border-right: 0;
+        @media (max-width: $mobile) {
+          h6 {
+            font-size: 19px !important;
+          }
+          .porto-sicon-description {
+            font-size: 14px !important;
+          }
+        }
+      }
+    }
+    .porto-sicon-header + .porto-sicon-description {
+      margin-top: 8px;
+    }
+    @media (max-width: $mobile) {
+      .porto-sicon-box {
+        border-right: 0;
+      }
+    }
+  }
+  // heading
+  .slider-title > span {
+    padding-left: 2.75em;
+    padding-right: 2.75em;
+    @media (max-width: $mobile) {
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+    }
+  }
+  .porto-heading.slider-title {
+    text-transform: inherit;
+    padding-bottom: 1.45em;
+    margin-top: 5px;
+    @media (max-width: $mobile) {
+      font-size: 24px !important;
+    }
+  }
+  // Products
+  .products_all-btn {
+    background-color: transparent;
+    border: none;
+    color: $color_text400;
+    padding-left: 0;
+    margin-bottom: 50px;
+    span {
+      font-size: 14px;
+      font-weight: 800;
+    }
+    &:hover {
+      color: $color_primary400;
+    }
+    &:focus,
+    &:active {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+  // image block
+  .home_block_image {
+    padding: 0 !important;
+    a.btn-primary:hover {
+      background-color: transparent !important;
+    }
+    .home_block_image_col {
+      max-width: 1920px;
+      margin: 0 auto 20px auto;
+    }
+    .home_block_image_left_col {
+      margin: 6% 2% 0 13.1%;
+      @media (max-width: $notebook) {
+        margin: 50px 80px 50px;
+      }
+      @media (max-width: $tablet) {
+        margin: 50px 20px;
+      }
+      @media (max-width: $mobile) {
+        margin: 50px 20px 0;
+      }
+      h3.porto-heading {
+        margin-top: 40px;
+        padding-bottom: 0.5em;
+        @media (max-width: $notebook) {
+          margin-top: 20px !important;
+        }
+        @media (max-width: $tablet) {
+          font-size: 24px !important;
+          line-height: 28px !important;
+        }
+        @media (max-width: $mobile) {
+          margin-top: 20px !important;
+          font-size: 24px !important;
+          line-height: 28px !important;
+        }
+      }
+      p.home_block_image_desc {
+        margin-bottom: 0;
+        margin-top: 25px;
+        @media (max-width: $notebook) {
+          font-size: 16px !important;
+          line-height: 24px !important;
+        }
+        @media (max-width: $tablet) {
+          font-size: 14px !important;
+          line-height: 20px !important;
+        }
+        @media (max-width: $mobile) {
+          font-size: 14px !important;
+          line-height: 20px !important;
+        }
+      }
+      .home_block_image_btn {
+        background-color: transparent;
+        border: none;
+        color: $color_text400;
+        padding-left: 0;
+        span {
+          font-size: 14px;
+          font-weight: 800;
+        }
+        &:hover {
+          color: $color_primary400;
+        }
+      }
+    }
+    .wp-block-column:nth-of-type(2) {
+      @media (max-width: $notebook) {
+        flex-basis: 46% !important;
+        margin-top: 0;
+        margin-left: 0;
+      }
+      @media (max-width: $tablet) {
+        margin-top: 30px;
+      }
+      @media (max-width: $small_tablet) {
+        margin-top: 50px;
+      }
+      @media (max-width: $mobile) {
+        margin-top: 10px;
+      }
+    }
+  }
+  @media (max-width: $tablet) {
+    .home-slider {
+      .owl-nav {
+        display: none;
+      }
+      .owl-item {
+        img {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+  @media (max-width: $small_tablet) {
+    .home-slider {
+      .owl-item {
+        img {
+          opacity: 0.1;
+        }
+        .porto-ibanner-container {
+          margin: 0 40px;
+          h5.porto-heading {
+            margin-top: 0 !important;
+            font-size: 24px !important;
+            line-height: 28px !important;
+          }
+          h4.porto-heading {
+            margin-top: 40px !important;
+            font-size: 32px !important;
+            line-height: 36px !important;
+            br {
+              content: " ";
+            }
+            br:after {
+              content: " ";
+            }
+          }
+          p.porto-heading {
+            font-size: 16px !important;
+            line-height: 24px !important;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $mobile) {
+    .home-slider {
+      .owl-item {
+        .porto-ibanner-container {
+          margin: 0 40px;
+          h5.porto-heading {
+            margin-top: 0 !important;
+            font-size: 20px !important;
+            line-height: 22px !important;
+          }
+          h4.porto-heading {
+            margin-top: 40px !important;
+            font-size: 24px !important;
+            line-height: 28px !important;
+            br {
+              content: " ";
+            }
+            br:after {
+              content: " ";
+            }
+          }
+          p.porto-heading {
+            font-size: 14px !important;
+            line-height: 20px !important;
+          }
+        }
+      }
+    }
+  }
+}

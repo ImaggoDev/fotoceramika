@@ -1,0 +1,69 @@
+// Faqs page
+@media (max-width: $mobile) {
+  .porto-section .slider-title.faqs-title {
+    font-size: 22px !important;
+    span {
+      padding: 0;
+    }
+    &:before,
+    &:after {
+      border-top: 0;
+    }
+  }
+  .porto-faqs .faq .toggle label {
+    padding-right: 50px !important;
+    font-size: 16px !important;
+    &:before {
+      content: "";
+      right: 10px;
+    }
+  }
+}
+
+/* Faqs */
+.porto-faqs {
+  .faq {
+    &:nth-child(odd) {
+      .toggle,
+      .toggle label {
+        background-color: $color_gray200;
+      }
+    }
+    &:nth-child(even) {
+      .toggle,
+      .toggle label {
+        background-color: white;
+      }
+    }
+    .toggle {
+      padding: 0;
+      label {
+        padding: 24px;
+        font-size: 20px;
+        border-left: 0;
+        color: $color_text400;
+        &::before {
+          content: "";
+          background-image: url("../icons/icon_arrow_ordering.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          right: 30px;
+          top: 30px;
+          width: 12.01px;
+          height: 12px;
+          border: 0;
+          transform: none;
+        }
+      }
+      &.active label::before {
+        transform: rotate(180deg);
+      }
+      .toggle-content {
+        padding: 24px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+}

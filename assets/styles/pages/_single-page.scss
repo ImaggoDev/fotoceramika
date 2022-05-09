@@ -1,0 +1,105 @@
+.page {
+  .page_header {
+    padding: 0;
+    min-height: 385px;
+    @media (max-width: $mobile) {
+      min-height: 289px;
+    }
+    .wp-block-columns {
+      max-width: 1920px;
+      margin: 0 auto 20px auto;
+    }
+    .page_header_text {
+      margin: 10.6% 2% 0 28.5%;
+      @media (max-width: $notebook) {
+       margin: 10.6% 2% 0 24.5%
+      }
+      @media (max-width: $tablet) {
+        margin: 10.6% 2% 0 9.5%;
+        h3.porto-heading {
+          font-size: 36px !important;
+          line-height: 28px !important;
+        }
+      }
+      @media (max-width: $mobile) {
+        margin: 0 2% 0% 4%;
+        padding: 20px;
+        p.porto-heading {
+          font-size: 16px !important;
+        }
+        h3.porto-heading {
+          font-size: 28px !important;
+          line-height: 28px !important;
+        }
+      }
+    }
+    .column_image {
+      margin: 0;
+      padding: 0;
+      .wp-block-image {
+        margin-bottom: 0;
+        text-align: right;
+        img {
+          @media (max-width: $notebook) {
+            height: 385px;
+            max-width: 100%;
+            object-fit: cover;
+          }
+          @media (max-width: $mobile) {
+            height: 160px;
+            max-width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    &--contact {
+      .page_header_text {
+        margin: 7.6% 2% 0 28.5%;
+        @media (max-width: $notebook) {
+          margin: 5.6% 2% 0 24.5%;
+        }
+        @media (max-width: $tablet) {
+          margin: 9.6% 2% 0 5.5%;;
+          h3.porto-heading {
+            line-height: 41px !important;
+          }
+        }
+        @media (max-width: $small_tablet) {
+          h3.porto-heading {
+            font-size: 32px !important;
+            line-height: 41px !important;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $tablet) {
+    .page_about_section_text,
+    .page_about_section_icon {
+      h3.porto-heading {
+        font-size: 40px !important;
+        line-height: 48px !important;
+      }
+    }
+  }
+  @media (max-width: $mobile) {
+    .page-content {
+      .wp-block-column {
+        padding: 0;
+      }
+      .page_about_section_text,
+      .page_about_section_icon {
+        padding: 20px 0;
+        h3.porto-heading {
+          font-size: 28px !important;
+          line-height: 32px !important;
+        }
+      }
+      p.porto-heading,
+      .wp-block-column p {
+        font-size: 16px !important;
+      }
+    }
+  }
+}
