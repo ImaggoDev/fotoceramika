@@ -122,9 +122,6 @@ add_action('wp', 'check_product_type');
 
 function check_product_type() {
     global $post;
-    if ( empty( $post->ID ) ) { 
-        return false; 
-    }
     $fpd = get_post_meta($post->ID, 'fpd_product_settings');
 
     if (empty($fpd)) {

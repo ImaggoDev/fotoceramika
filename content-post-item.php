@@ -69,11 +69,7 @@ if ( $post_style && 'style-3' == $post_style ) {
 		<?php the_title(); ?>
 	</a></h4>
 	<?php endif; ?>
-<<<<<<< HEAD
 	<?php echo porto_get_excerpt( $excerpt_length, false ); ?> <a href="<?php the_permalink(); ?>" class="btn <?php echo esc_attr( $porto_post_btn_style ? $porto_post_btn_style : $porto_settings['post-related-btn-style'] ); ?> <?php echo esc_attr( $porto_post_btn_color ? $porto_post_btn_color : $porto_settings['post-related-btn-color'] ); ?> <?php echo esc_attr( $porto_post_btn_size ? $porto_post_btn_size : $porto_settings['post-related-btn-size'] ); ?> m-t-md"><?php esc_html_e( 'Czytaj dalej', 'porto' ); ?></a> </div>
-=======
-	<?php echo porto_get_excerpt( $excerpt_length, false ); ?> <a href="<?php the_permalink(); ?>" class="btn <?php echo esc_attr( $porto_post_btn_style ? $porto_post_btn_style : $porto_settings['post-related-btn-style'] ); ?> <?php echo esc_attr( $porto_post_btn_color ? $porto_post_btn_color : $porto_settings['post-related-btn-color'] ); ?> <?php echo esc_attr( $porto_post_btn_size ? $porto_post_btn_size : $porto_settings['post-related-btn-size'] ); ?> m-t-md m-b-md"><?php esc_html_e( 'Read More', 'porto' ); ?></a> </div>
->>>>>>> origin/main
 <?php
 } elseif ( 'style-2' == $post_style ) {
 	$post_share = get_post_meta( $post->ID, 'post_share', true );
@@ -81,11 +77,7 @@ if ( $post_style && 'style-3' == $post_style ) {
 
 <div class="post-item style-2<?php echo ( 'without-icon' == $porto_settings['post-title-style'] ) ? ' post-title-simple' : ''; ?>">
 	<?php if ( $attachment && $attachment_related ) : ?>
-<<<<<<< HEAD
 	<a href="<?php the_permalink(); ?>"> <span class="post-image thumb-info<?php echo ( ! empty( $post_thumb_bg ) ? ' thumb-info-' . esc_attr( $post_thumb_bg ) : '' ), ( ! empty( $post_thumb_image ) ? ' thumb-info-' . esc_attr( $post_thumb_image ) : '' ), ( ! empty( $post_thumb_borders ) ? ' thumb-info-' . esc_attr( $post_thumb_borders ) : '' ); ?>"> <span class="thumb-info-wrapper"> <img class="img-responsive" width="<?php echo esc_attr( $attachment_related['width'] ); ?>" height="<?php echo esc_attr( $attachment_related['height'] ); ?>" src="<?php echo esc_url( $attachment_related['src'] ); ?>" alt="<?php echo esc_attr( $attachment_related['alt'] ); ?>" />
-=======
-	<a href="<?php the_permalink(); ?>"> <span class="post-image thumb-info<?php echo ( ! empty( $post_thumb_bg ) ? ' thumb-info-' . esc_attr( $post_thumb_bg ) : '' ), ( ! empty( $post_thumb_image ) ? ' thumb-info-' . esc_attr( $post_thumb_image ) : '' ), ( ! empty( $post_thumb_borders ) ? ' thumb-info-' . esc_attr( $post_thumb_borders ) : '' ); ?> m-b-md"> <span class="thumb-info-wrapper"> <img class="img-responsive" width="<?php echo esc_attr( $attachment_related['width'] ); ?>" height="<?php echo esc_attr( $attachment_related['height'] ); ?>" src="<?php echo esc_url( $attachment_related['src'] ); ?>" alt="<?php echo esc_attr( $attachment_related['alt'] ); ?>" />
->>>>>>> origin/main
 		<?php if ( $porto_settings['post-zoom'] ) : ?>
 	<span class="zoom" data-src="<?php echo esc_url( $attachment['src'] ); ?>" data-title="<?php echo esc_attr( $attachment['caption'] ); ?>"><i class="fas fa-search"></i></span>
 	<?php endif; ?>
@@ -274,11 +266,7 @@ if ( $post_style && 'style-3' == $post_style ) {
 <?php } elseif ( 'style-6' == $post_style ) { ?>
 <div class="post-item style-6<?php echo 'without-icon' == $porto_settings['post-title-style'] ? ' post-title-simple' : ''; ?>">
 	<?php if ( $attachment && $attachment_related ) : ?>
-<<<<<<< HEAD
 	<a href="<?php the_permalink(); ?>"> <span class="post-image thumb-info<?php echo ( ! empty( $post_thumb_bg ) ? ' thumb-info-' . esc_attr( $post_thumb_bg ) : '' ), ( ! empty( $post_thumb_image ) ? ' thumb-info-' . esc_attr( $post_thumb_image ) : '' ), ( ! empty( $post_thumb_borders ) ? ' thumb-info-' . esc_attr( $post_thumb_borders ) : '' ); ?>"> <span class="thumb-info-wrapper"> <img class="img-responsive" width="<?php echo esc_attr( $attachment_related['width'] ); ?>" height="<?php echo esc_attr( $attachment_related['height'] ); ?>" src="<?php echo esc_url( $attachment_related['src'] ); ?>" alt="<?php echo esc_attr( $attachment_related['alt'] ); ?>" />
-=======
-	<a href="<?php the_permalink(); ?>"> <span class="post-image thumb-info<?php echo ( ! empty( $post_thumb_bg ) ? ' thumb-info-' . esc_attr( $post_thumb_bg ) : '' ), ( ! empty( $post_thumb_image ) ? ' thumb-info-' . esc_attr( $post_thumb_image ) : '' ), ( ! empty( $post_thumb_borders ) ? ' thumb-info-' . esc_attr( $post_thumb_borders ) : '' ); ?> m-b-md"> <span class="thumb-info-wrapper"> <img class="img-responsive" width="<?php echo esc_attr( $attachment_related['width'] ); ?>" height="<?php echo esc_attr( $attachment_related['height'] ); ?>" src="<?php echo esc_url( $attachment_related['src'] ); ?>" alt="<?php echo esc_attr( $attachment_related['alt'] ); ?>" />
->>>>>>> origin/main
 		<?php if ( $porto_settings['post-zoom'] ) : ?>
 	<span class="zoom" data-src="<?php echo esc_url( $attachment['src'] ); ?>" data-title="<?php echo esc_attr( $attachment['caption'] ); ?>"><i class="fas fa-search"></i></span>
 	<?php endif; ?>
@@ -288,11 +276,7 @@ if ( $post_style && 'style-3' == $post_style ) {
 	<h3> <a class="text-decoration-none text-<?php echo 'dark' == $porto_settings['css-type'] ? 'light' : 'dark'; ?>" href="<?php the_permalink(); ?>">
 	<?php the_title(); ?>
 	</a> </h3>
-<<<<<<< HEAD
 	<a href="<?php the_permalink(); ?>" class="read-more"><span><?php esc_html_e( 'Czytaj dalej', 'porto' ); ?></span> <i class="fa fa-play"></i></a>
-=======
-	<a href="<?php the_permalink(); ?>" class="read-more"><span><?php esc_html_e( 'Read More', 'porto' ); ?></span> <i class="fa fa-play"></i></a>
->>>>>>> origin/main
 </div>
 <?php } elseif ( 'style-7' == $post_style ) { ?>
 	<div class="post-item style-7<?php echo ( 'without-icon' == $porto_settings['post-title-style'] ) ? ' post-title-simple' : ''; ?>">
@@ -308,11 +292,7 @@ if ( $post_style && 'style-3' == $post_style ) {
 <?php } else { ?>
 <div class="post-item<?php echo 'without-icon' == $porto_settings['post-title-style'] ? ' post-title-simple' : ''; ?>">
 	<?php if ( $attachment && $attachment_related ) : ?>
-<<<<<<< HEAD
 	<a href="<?php the_permalink(); ?>"> <span class="post-image thumb-info<?php echo ( ! empty( $post_thumb_bg ) ? ' thumb-info-' . esc_attr( $post_thumb_bg ) : '' ), ( ! empty( $post_thumb_image ) ? ' thumb-info-' . esc_attr( $post_thumb_image ) : '' ), ( ! empty( $post_thumb_borders ) ? ' thumb-info-' . esc_attr( $post_thumb_borders ) : '' ); ?>"> <span class="thumb-info-wrapper"> <img class="img-responsive" width="<?php echo esc_attr( $attachment_related['width'] ); ?>" height="<?php echo esc_attr( $attachment_related['height'] ); ?>" src="<?php echo esc_url( $attachment_related['src'] ); ?>" alt="<?php echo esc_attr( $attachment_related['alt'] ); ?>" />
-=======
-	<a href="<?php the_permalink(); ?>"> <span class="post-image thumb-info<?php echo ( ! empty( $post_thumb_bg ) ? ' thumb-info-' . esc_attr( $post_thumb_bg ) : '' ), ( ! empty( $post_thumb_image ) ? ' thumb-info-' . esc_attr( $post_thumb_image ) : '' ), ( ! empty( $post_thumb_borders ) ? ' thumb-info-' . esc_attr( $post_thumb_borders ) : '' ); ?> m-b-md"> <span class="thumb-info-wrapper"> <img class="img-responsive" width="<?php echo esc_attr( $attachment_related['width'] ); ?>" height="<?php echo esc_attr( $attachment_related['height'] ); ?>" src="<?php echo esc_url( $attachment_related['src'] ); ?>" alt="<?php echo esc_attr( $attachment_related['alt'] ); ?>" />
->>>>>>> origin/main
 		<?php if ( $porto_settings['post-zoom'] ) : ?>
 	<span class="zoom" data-src="<?php echo esc_url( $attachment['src'] ); ?>" data-title="<?php echo esc_attr( $attachment['caption'] ); ?>"><i class="fas fa-search"></i></span>
 	<?php endif; ?>
