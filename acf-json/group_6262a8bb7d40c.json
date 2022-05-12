@@ -8,7 +8,7 @@
             "name": "is_fpd",
             "type": "true_false",
             "instructions": "Użytkownik ma możliwość edycji produktu przy pomocy wtyczki fancybox. Powoduje to zmianę układu w treści samego produktu.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -118,6 +118,102 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_627cfbad64b1a",
+            "label": "Tło - Desktop",
+            "name": "bg-desktop",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6262a8ca65007",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_627d3828ac48e",
+            "label": "Produkt ma osobny builder na mobile",
+            "name": "is_fpd_mobile",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6262a8ca65007",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_627cfbc864b1b",
+            "label": "Tło - Mobile",
+            "name": "bg-mobile",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_627d3828ac48e",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_6262a8ca65007",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -138,5 +234,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1651134204
+    "modified": 1652376291
 }

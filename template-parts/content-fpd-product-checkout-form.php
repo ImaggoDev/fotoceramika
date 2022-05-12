@@ -5,7 +5,29 @@
     if($type === 'variable') {
         $variations = $product->get_available_variations();
     }
+
+    $bg_desktop = get_field('bg-desktop',$args['id']);
+    $mobile_desktop = false;
+
+    if(get_field('is_fpd_mobile',$args['id'])) {
+        $mobile_desktop = get_field('bg-mobile', $args['id']);
+    }
 ?>
+
+<style>
+    .fpd-container .fpd-main-wrapper {
+        background: url(<?= $bg_desktop ?>) !important;
+    }
+
+    <?php if($mobile_desktop): ?>
+        @media all and (max-width: 768px) {
+            .fpd-container .fpd-main-wrapper {
+                background: url(<?= $mobile_desktop ?>) !important;
+            }
+        }
+    <?php endif; ?>
+
+</style>
 
 <div class="fpd-product-checkout-form">
 
