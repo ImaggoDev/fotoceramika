@@ -23,6 +23,7 @@
         @media all and (max-width: 768px) {
             .fpd-container .fpd-main-wrapper {
                 background: url(<?= $mobile_desktop ?>) !important;
+                aspect-ratio: 1 / 1;
             }
         }
     <?php endif; ?>
