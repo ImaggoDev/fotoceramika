@@ -4647,7 +4647,7 @@ ul.products li.product:hover .add_to_cart_button {
   display: inline-block;
 }
 
-.woocommerce-account .woocommerce-MyAccount-content .woocommerce-order-details h2 {
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-thankyou h2 {
   font-size: 20px;
   font-weight: 500;
   color: #22203c;
