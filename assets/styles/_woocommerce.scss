@@ -504,13 +504,13 @@ ul.products {
       content: "\e852\e852\e852\e852\e852" !important;
       color: $color_primary400 !important;
     }
-    
+
     .star-rating:before {
       font-family: "Porto" !important;
       content: "\e853\e853\e853\e853\e853" !important;
       color: $color_primary400 !important;
     }
-    
+
     #review_form {
       @media (max-width: $small-tablet) {
         .comment-form-cookies-consent {
@@ -2036,14 +2036,12 @@ ul.products {
         }
       }
       // orders details
-      .woocommerce-order-details {
-        h2 {
-          font-size: 20px;
-          font-weight: 500;
-          color: $color_text400;
-          margin-bottom: 0;
-          margin-left: 0;
-        }
+      .woocommerce-thankyou h2 {
+        font-size: 20px;
+        font-weight: 500;
+        color: $color_text400;
+        margin-bottom: 0;
+        margin-left: 0;
       }
     }
   }
