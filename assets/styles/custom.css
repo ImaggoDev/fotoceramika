@@ -1148,19 +1148,25 @@ a.btn-primary:focus, a.btn-primary:active {
 
 @media (max-width: 1680px) {
   .page .page_header .column_image .wp-block-image img {
-    height: 385px;
-    max-width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    aspect-ratio: 15 / 8;
+  }
+}
+
+@media (max-width: 768px) {
+  .page .page_header .column_image .wp-block-image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    aspect-ratio: 5/6;
   }
 }
 
 @media (max-width: 576px) {
   .page .page_header .column_image .wp-block-image img {
-    height: 160px;
-    max-width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    aspect-ratio: 5/2;
   }
 }
 
@@ -2106,28 +2112,25 @@ a.btn-primary:focus, a.btn-primary:active {
 
 @media (max-width: 1680px) {
   .archive .shop_header .column_image .wp-block-image img {
-    height: 385px;
-    max-width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    aspect-ratio: 15 / 8;
   }
 }
 
 @media (max-width: 768px) {
   .archive .shop_header .column_image .wp-block-image img {
-    height: 405px;
-    max-width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    aspect-ratio: 5/6;
   }
 }
 
 @media (max-width: 576px) {
   .archive .shop_header .column_image .wp-block-image img {
-    height: 160px;
-    max-width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    aspect-ratio: 5/2;
   }
 }
 
