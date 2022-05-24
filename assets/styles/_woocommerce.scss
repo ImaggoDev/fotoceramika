@@ -52,19 +52,16 @@
         text-align: right;
         img {
           @media (max-width: $notebook) {
-            height: 385px;
-            max-width: 100%;
             object-fit: cover;
+            aspect-ratio: 15 / 8 ;
           }
           @media (max-width: $small-tablet) {
-            height: 405px;
-            max-width: 100%;
             object-fit: cover;
+            aspect-ratio: 5/6;
           }
           @media (max-width: $mobile) {
-            height: 160px;
-            max-width: 100%;
             object-fit: cover;
+            aspect-ratio: 5/2;
           }
         }
       }
