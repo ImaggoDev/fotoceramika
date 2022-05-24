@@ -1339,19 +1339,23 @@ ul.products {
   .woocommerce-account-fields {
     padding-left: 2rem;
     padding-right: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: $color_text400;
+    margin-bottom: 0!important;
     @media (max-width: $small-tablet) {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
     h3 {
-      color: $color_text400;
+      color: white;
       font-weight: 500;
       font-size: 34px;
       line-height: 42px;
-      border-bottom: 1px solid #bcbcc8;
+      border-bottom: 1px solid $color_text200;
       padding-bottom: 1rem;
+      padding-top: 2.5rem;
       margin-bottom: 2rem;
-      margin-top: 4.2rem;
+      margin-top: 1.5rem;
       display: block;
       @media (max-width: $tablet) {
         font-size: 28px !important;
@@ -1364,16 +1368,19 @@ ul.products {
         font-size: 16px;
         font-weight: 500;
         color: $color_text400;
-        border: 1px solid $color_gray200;
+        border: 1px solid $color_gray600;
         &::placeholder {
           font-size: 16px;
           font-weight: 500;
           color: $color_gray600;
         }
       }
+      .woocommerce-invalid-required-field .input-text {
+        border: 1px solid #f44336 !important;
+      }
       label {
         margin-bottom: 10px;
-        color: $color_text400;
+        color: white;
         .required {
           color: $color_text400;
           text-decoration: none;
@@ -1382,7 +1389,7 @@ ul.products {
     }
     .select2-container--default .select2-selection--single {
       border-radius: 0;
-      border: 1px solid $color_gray200;
+      border: 1px solid $color_gray600;
       color: $color_text400;
       padding-left: 10px;
       font-size: 16px;
@@ -1396,17 +1403,23 @@ ul.products {
     .porto-checkbox .porto-control-label::before {
       border: 1px solid $color_text400;
     }
+    .woocommerce-form__label-for-checkbox {
+      color: white;
+    }
   }
   .woocommerce-additional-fields__field-wrapper {
     padding-left: 2rem;
     padding-right: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: $color_text400;
+    
     @media (max-width: $small-tablet) {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
     label {
       margin-bottom: 10px;
-      color: $color_text400;
+      color: white;
     }
     #order_comments {
       min-height: 54px;
@@ -1416,7 +1429,7 @@ ul.products {
       font-size: 16px;
       font-weight: 500;
       color: $color_gray600;
-      border: 1px solid $color_gray200;
+      border: 1px solid $color_gray600;
       &::placeholder {
         font-size: 16px;
         font-weight: 500;
@@ -1545,6 +1558,18 @@ ul.products {
                 img {
                   padding: 0;
                   margin-left: 0;
+                  max-height: 2rem!important;
+                  @media (max-width: $mobile) {
+                  max-height: 100%!important;
+                  max-width: 100%!important;
+                  }
+                }
+                input[type="radio"] + label {
+                  border: 3px solid white;
+                }
+                input[type="radio"]:checked + label {
+                  border: 3px solid $color_primary200;
+                  background: #f3f3f3;
                 }
                 @media (max-width: $notebook) {
                   label {

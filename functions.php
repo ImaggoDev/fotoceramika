@@ -337,3 +337,5 @@ add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_
 function woocommerce_custom_product_add_to_cart_text() {
     return __( 'Dodaj do koszyka', 'woocommerce' );
 }
+
+
