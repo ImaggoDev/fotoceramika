@@ -70,10 +70,14 @@
       label {
         margin-bottom: 10px;
       }
-      .wpcf7-text,
-      textarea {
+      .wpcf7-text {
         width: 100%;
         height: 54px;
+        padding: 16px;
+      }
+      textarea {
+        width: 100%;
+        height: auto;
         padding: 16px;
       }
     }

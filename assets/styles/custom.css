@@ -1306,10 +1306,15 @@ a.btn-primary:focus, a.btn-primary:active {
   margin-bottom: 10px;
 }
 
-.contact__form--content .form-group .wpcf7-text,
-.contact__form--content .form-group textarea {
+.contact__form--content .form-group .wpcf7-text {
   width: 100%;
   height: 54px;
+  padding: 16px;
+}
+
+.contact__form--content .form-group textarea {
+  width: 100%;
+  height: auto;
   padding: 16px;
 }
 
