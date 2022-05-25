@@ -339,3 +339,14 @@ function woocommerce_custom_product_add_to_cart_text() {
 }
 
 
+add_filter( 'woocommerce_form_field', 'checkout_fields_in_label_error', 10, 4 );
+
+function checkout_fields_in_label_error( $field, $key, $args, $value ) {
+   if ( strpos( $field, '</span>' ) !== false && $args['required'] ) {
+      $error = '<span class="error" style="display:none">';
+      $error .= sprintf( __( '%s is a required field.', 'woocommerce' ), $args['label'] );
+      $error .= '</span>';
+      $field = substr_replace( $field, $error, strpos( $field, '</span>' ), 0);
+   }
+   return $field;
+}

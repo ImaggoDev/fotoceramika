@@ -3714,6 +3714,16 @@ ul.products li.product:hover .add_to_cart_button {
   /* Checkout overlay style disable */
 }
 
+.woocommerce-checkout .woocommerce-error li[data-id="billing_first_name"],
+.woocommerce-checkout .woocommerce-error li[data-id="billing_last_name"],
+.woocommerce-checkout .woocommerce-error li[data-id="billing_address_1"],
+.woocommerce-checkout .woocommerce-error li[data-id="billing_postcode"],
+.woocommerce-checkout .woocommerce-error li[data-id="billing_city"],
+.woocommerce-checkout .woocommerce-error li[data-id="billing_phone"],
+.woocommerce-checkout .woocommerce-error li[data-id="billing_email"] {
+  display: none;
+}
+
 .woocommerce-checkout .entry-title {
   display: block !important;
   font-size: 48px;
@@ -3780,18 +3790,18 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text {
-  padding: 15px 16px;
-  line-height: 22px;
-  font-size: 16px;
+  padding: 13px 15px;
+  line-height: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: #22203c;
-  border: 1px solid #808285;
+  border: 2px solid #22203c;
 }
 
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text::-webkit-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text::-webkit-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text::-webkit-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
@@ -3799,7 +3809,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text:-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text:-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text:-ms-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
@@ -3807,7 +3817,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text::-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text::-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text::-ms-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
@@ -3815,21 +3825,30 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text::placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text::placeholder,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text::placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
+}
+
+.woocommerce-checkout .woocommerce-billing-fields__field-wrapper .woocommerce-invalid-required-field .error,
+.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .woocommerce-invalid-required-field .error,
+.woocommerce-checkout .woocommerce-account-fields__field-wrapper .woocommerce-invalid-required-field .error {
+  display: block !important;
+  font-size: 14px;
+  margin-top: 0.3rem;
+  color: #f44336;
 }
 
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .woocommerce-invalid-required-field .input-text,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .woocommerce-invalid-required-field .input-text,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .woocommerce-invalid-required-field .input-text {
-  border: 1px solid #f44336 !important;
+  border: 2px solid #f44336 !important;
 }
 
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper label,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper label,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper label {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: white;
 }
 
@@ -3844,17 +3863,17 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single {
   border-radius: 0;
-  border: 1px solid #808285;
+  border: 1px solid #22203c;
   color: #22203c;
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single::-webkit-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single::-webkit-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single::-webkit-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
@@ -3862,7 +3881,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single:-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single:-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single:-ms-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
@@ -3870,7 +3889,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single::-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single::-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single::-ms-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
@@ -3878,7 +3897,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single::placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single::placeholder,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single::placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
@@ -3886,12 +3905,63 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields .porto-checkbox .porto-control-label::before,
 .woocommerce-checkout .woocommerce-shipping-fields .porto-checkbox .porto-control-label::before,
 .woocommerce-checkout .woocommerce-account-fields .porto-checkbox .porto-control-label::before {
-  border: 1px solid #22203c;
+  border: 2px solid #22203c;
 }
 
 .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__label-for-checkbox,
 .woocommerce-checkout .woocommerce-shipping-fields .woocommerce-form__label-for-checkbox,
 .woocommerce-checkout .woocommerce-account-fields .woocommerce-form__label-for-checkbox {
+  color: white;
+}
+
+.woocommerce-checkout .woocommerce-account-fields {
+  margin-top: 0 !important;
+}
+
+.woocommerce-checkout .woocommerce-account-fields label {
+  margin-bottom: 5px;
+  color: white;
+}
+
+.woocommerce-checkout .woocommerce-account-fields label .required {
+  color: #22203c;
+  text-decoration: none;
+}
+
+.woocommerce-checkout .woocommerce-account-fields .input-text {
+  padding: 13px 15px;
+  line-height: 13px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #22203c;
+  border: 2px solid #22203c;
+}
+
+.woocommerce-checkout .woocommerce-account-fields .input-text::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #808285;
+}
+
+.woocommerce-checkout .woocommerce-account-fields .input-text:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #808285;
+}
+
+.woocommerce-checkout .woocommerce-account-fields .input-text::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #808285;
+}
+
+.woocommerce-checkout .woocommerce-account-fields .input-text::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #808285;
+}
+
+.woocommerce-checkout .woocommerce-account-fields .woocommerce-password-hint {
   color: white;
 }
 
@@ -3915,36 +3985,36 @@ ul.products li.product:hover .add_to_cart_button {
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments {
-  min-height: 54px;
-  height: 54px;
-  padding: 15px 16px;
+  min-height: 49px;
+  height: 49px;
+  padding: 13px 15px;
   line-height: 22px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
-  border: 1px solid #808285;
+  border: 1px solid #22203c;
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments::-webkit-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments:-ms-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments::-ms-input-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments::placeholder {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #808285;
 }
@@ -4181,6 +4251,17 @@ ul.products li.product:hover .add_to_cart_button {
 
 .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .payment_methods .paynow-data-processing-info-less {
   font-family: "Manrope";
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .woocommerce-terms-and-conditions-wrapper .woocommerce-invalid-required-field .error {
+  display: block !important;
+  font-size: 14px;
+  margin-top: 0.3rem;
+  color: #f44336;
+}
+
+.woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .woocommerce-terms-and-conditions-wrapper .woocommerce-invalid-required-field input {
+  border: 2px solid #f44336 !important;
 }
 
 .woocommerce-checkout .checkout-order-review .box-content .woocommerce-checkout-review-order .woocommerce-terms-and-conditions-wrapper .woocommerce-privacy-policy-text p {
