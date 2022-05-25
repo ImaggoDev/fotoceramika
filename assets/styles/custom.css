@@ -3922,6 +3922,7 @@ ul.products li.product:hover .add_to_cart_button {
 
 .woocommerce-checkout .woocommerce-account-fields {
   margin-top: 0 !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .woocommerce-checkout .woocommerce-account-fields label {
