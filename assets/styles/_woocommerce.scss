@@ -1371,6 +1371,9 @@ ul.products {
       }
     }
     &__field-wrapper {
+      .form-row {
+        display: inline-block;
+      }
       .input-text {
         padding: 13px 15px;
         line-height: 13px;
