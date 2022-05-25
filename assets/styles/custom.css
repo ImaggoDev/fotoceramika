@@ -3787,6 +3787,12 @@ ul.products li.product:hover .add_to_cart_button {
   }
 }
 
+.woocommerce-checkout .woocommerce-billing-fields__field-wrapper .form-row,
+.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .form-row,
+.woocommerce-checkout .woocommerce-account-fields__field-wrapper .form-row {
+  display: inline-block;
+}
+
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text {
