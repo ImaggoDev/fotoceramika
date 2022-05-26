@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 const SidebarLimitElement = () => {
-  
+
 }
 SidebarLimitElement();
 
@@ -36,9 +36,11 @@ function scrollToPersonalize() {
 
     btn.addEventListener('click',  () => {
         let target = document.querySelector('.custom-product-designer');
-        const offsetTop = target.offsetTop;
+        const margin = window.innerWidth * 0.1 < 80 ? window.innerWidth * 0.1 : 80;
+        var rect = target.getBoundingClientRect();
+
         scroll({
-            top: offsetTop + (window.innerWidth * 0.1),
+            top: rect.top - margin,
             behavior: "smooth"
           });
     })
