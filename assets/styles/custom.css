@@ -3796,8 +3796,8 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text {
-  padding: 13px 15px;
-  line-height: 13px;
+  padding: 9px 15px;
+  line-height: 11px;
   font-size: 14px;
   font-weight: 500;
   color: #22203c;
@@ -3807,7 +3807,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text::-webkit-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text::-webkit-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text::-webkit-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3815,7 +3815,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text:-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text:-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text:-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3823,7 +3823,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text::-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text::-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text::-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3831,7 +3831,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields__field-wrapper .input-text::placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper .input-text::placeholder,
 .woocommerce-checkout .woocommerce-account-fields__field-wrapper .input-text::placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3874,12 +3874,19 @@ ul.products li.product:hover .add_to_cart_button {
   padding-left: 10px;
   font-size: 14px;
   font-weight: 500;
+  height: 41px;
+}
+
+.woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single .select2-selection__rendered,
+.woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single .select2-selection__rendered,
+.woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding: 6px 12px;
 }
 
 .woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single::-webkit-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single::-webkit-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single::-webkit-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3887,7 +3894,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single:-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single:-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single:-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3895,7 +3902,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single::-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single::-ms-input-placeholder,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single::-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3903,7 +3910,7 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-billing-fields .select2-container--default .select2-selection--single::placeholder,
 .woocommerce-checkout .woocommerce-shipping-fields .select2-container--default .select2-selection--single::placeholder,
 .woocommerce-checkout .woocommerce-account-fields .select2-container--default .select2-selection--single::placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3936,8 +3943,8 @@ ul.products li.product:hover .add_to_cart_button {
 }
 
 .woocommerce-checkout .woocommerce-account-fields .input-text {
-  padding: 13px 15px;
-  line-height: 13px;
+  padding: 11px 15px;
+  line-height: 11px;
   font-size: 14px;
   font-weight: 500;
   color: #22203c;
@@ -3945,25 +3952,25 @@ ul.products li.product:hover .add_to_cart_button {
 }
 
 .woocommerce-checkout .woocommerce-account-fields .input-text::-webkit-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-account-fields .input-text:-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-account-fields .input-text::-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-account-fields .input-text::placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
@@ -3994,8 +4001,8 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments {
   min-height: 49px;
   height: 49px;
-  padding: 13px 15px;
-  line-height: 22px;
+  padding: 11px 15px;
+  line-height: 18px;
   font-size: 14px;
   font-weight: 500;
   color: #808285;
@@ -4003,25 +4010,25 @@ ul.products li.product:hover .add_to_cart_button {
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments::-webkit-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments:-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments::-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
 
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper #order_comments::placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #808285;
 }
