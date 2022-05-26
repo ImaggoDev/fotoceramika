@@ -4467,10 +4467,13 @@ ul.products li.product:hover .add_to_cart_button {
 .woocommerce-checkout .checkout-order-review .paczkomaty-shipping .select2-container .select2-selection {
   border: 1px solid #F3F3F3;
   border-radius: 0;
+  height: 40px;
+  font-size: 12px;
 }
 
 .woocommerce-checkout .checkout-order-review .paczkomaty-shipping .select2-container .select2-selection__rendered {
   color: #22203c;
+  padding: 5px 12px;
 }
 
 .woocommerce-checkout .checkout-order-review .paczkomaty-shipping .select2-container .select2-selection__placeholder {
