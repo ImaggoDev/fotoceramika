@@ -1323,7 +1323,7 @@ ul.products {
     li[data-id="billing_postcode"],
     li[data-id="billing_city"],
     li[data-id="billing_phone"],
-    li[data-id="billing_email"]{
+    li[data-id="billing_email"] {
       display: none;
     }
   }
@@ -1433,7 +1433,7 @@ ul.products {
   }
   .woocommerce-account-fields {
     margin-top: 0 !important;
-    padding-bottom: 0.5rem!important;
+    padding-bottom: 0.5rem !important;
     label {
       margin-bottom: 5px;
       color: white;
@@ -1837,8 +1837,11 @@ ul.products {
         .select2-selection {
           border: 1px solid $color_gray200;
           border-radius: 0;
+          height: 40px;
+          font-size: 12px;
           &__rendered {
             color: $color_text400;
+            padding: 5px 12px;
           }
           &__placeholder {
             color: $color_gray600;
@@ -2696,6 +2699,6 @@ a:hover {
   color: $color_primary200 !important;
 }
 
-.fpd-grid-cover>.fpd-item>picture {
+.fpd-grid-cover > .fpd-item > picture {
   background-size: contain !important;
 }
