@@ -5496,4 +5496,8 @@ a:hover {
 .comment-form-rating .stars span a:before {
   color: #63baf2 !important;
 }
+
+.fpd-grid-cover > .fpd-item > picture {
+  background-size: contain !important;
+}
 /*# sourceMappingURL=custom.css.map */

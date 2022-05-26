@@ -2691,3 +2691,7 @@ a:hover {
 .comment-form-rating .stars span a:before {
   color: $color_primary200 !important;
 }
+
+.fpd-grid-cover>.fpd-item>picture {
+  background-size: contain !important;
+}
