@@ -80,6 +80,10 @@
       min-height: auto;
     }
   }
+  // widget categories 
+  .widget_product_categories ul ul.children {
+    display: block;
+  }
 }
 // products
 ul.products {
@@ -1313,7 +1317,7 @@ ul.products {
 .woocommerce-checkout {
   /* Checkout overlay style disable */
   .blockUI.blockOverlay {
-    // background: $color_text400 !important;
+    background: transparent!important;
   }
   // errors
   .woocommerce-error {
