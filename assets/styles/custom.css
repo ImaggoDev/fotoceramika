@@ -2152,6 +2152,10 @@ a.btn-primary:focus, a.btn-primary:active {
   }
 }
 
+.archive .widget_product_categories ul ul.children {
+  display: block;
+}
+
 ul.products li.product {
   margin-bottom: 35px;
 }
@@ -3712,6 +3716,10 @@ ul.products li.product:hover .add_to_cart_button {
 /* CHECKOUT PAGE */
 .woocommerce-checkout {
   /* Checkout overlay style disable */
+}
+
+.woocommerce-checkout .blockUI.blockOverlay {
+  background: transparent !important;
 }
 
 .woocommerce-checkout .woocommerce-error li[data-id="billing_first_name"],

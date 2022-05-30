@@ -121,20 +121,21 @@ function custom_product_desc()
 add_action('wp', 'check_product_type');
 
 function check_product_type() {
-    global $post;
-    $fpd = get_post_meta($post->ID, 'fpd_product_settings');
+    if ( is_product() ){
+        global $post;
+        $fpd = get_post_meta($post->ID, 'fpd_product_settings');
 
-    if (empty($fpd)) {
-        return false;
+        if (empty($fpd)) {
+            return false;
+        }
+
+        // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
+        // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
+
+        remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
+        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
     }
-
-    // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
-    // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
-
-    remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
-    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 }
-
 
 add_action('custom_product_designer_variations', 'custom_product_designer_variations');
 
