@@ -334,12 +334,14 @@ function gateway_disable_inpost_online_payment( $available_gateways ) {
    return $available_gateways;   
 }
 
+// Text add to cart
+
 add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );  
 function woocommerce_custom_product_add_to_cart_text() {
     return __( 'Dodaj do koszyka', 'woocommerce' );
 }
 
-
+// required fields checkout page
 add_filter( 'woocommerce_form_field', 'checkout_fields_in_label_error', 10, 4 );
 
 function checkout_fields_in_label_error( $field, $key, $args, $value ) {
@@ -351,3 +353,24 @@ function checkout_fields_in_label_error( $field, $key, $args, $value ) {
    }
    return $field;
 }
+
+
+// Other featured image home page 
+
+function replacing_template_loop_product_thumbnail() {
+    if ( is_front_page() )  {
+        function wc_template_loop_product_replaced_thumb() {
+            if ( get_field( "product_image_home" ) )  {
+            $home_product_image = get_field( "product_image_home" );
+            echo '<img width="336" height="336" 
+            src="'. $home_product_image['url'] . '" class="wp-post-image" alt="'. $home_product_image['title'] . '" loading="lazy" 
+            srcset="'. $home_product_image['url'] . ' 336w, 
+            '. $home_product_image['url'] . ' 672w" sizes="(max-width: 336px) 100vw, 336px">';
+            }
+        }
+        remove_action( "woocommerce_before_shop_loop_item_title", "woocommerce_template_loop_product_thumbnail", 10 );
+        remove_action( 'woocommerce_before_shop_loop_item_title', 'porto_loop_product_thumbnail', 10 );
+        add_action( "woocommerce_before_shop_loop_item_title", "wc_template_loop_product_replaced_thumb", 10 );
+    }
+}
+add_action( "get_header", "replacing_template_loop_product_thumbnail" );

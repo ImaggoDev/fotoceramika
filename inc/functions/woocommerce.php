@@ -61,7 +61,7 @@ add_action( 'woocommerce_after_shop_loop', 'porto_woocommerce_open_after_clearfi
 add_action( 'woocommerce_after_shop_loop', 'porto_woocommerce_close_after_clearfix_div', 999 );
 add_action( 'woocommerce_before_shop_loop', 'porto_grid_list_toggle', 70 );
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_pagination', 50 );
-add_action( 'woocommerce_before_shop_loop_item_title', 'porto_loop_product_thumbnail', 10 );
+//add_action( 'woocommerce_before_shop_loop_item_title', 'porto_loop_product_thumbnail', 10 );
 add_action( 'woocommerce_archive_description', 'porto_woocommerce_category_image', 2 );
 add_action( 'woocommerce_shop_loop_item_title', 'porto_woocommerce_shop_loop_item_title_open', 1 );
 add_action( 'woocommerce_shop_loop_item_title', 'porto_woocommerce_shop_loop_item_title_close', 100 );
