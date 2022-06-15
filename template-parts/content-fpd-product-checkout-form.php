@@ -31,7 +31,6 @@
 </style>
 
 <div class="fpd-product-checkout-form">
-
     <?php
         if($type === 'variable' && !empty($variations)):
             $index = 0;
