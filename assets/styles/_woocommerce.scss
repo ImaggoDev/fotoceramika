@@ -80,7 +80,7 @@
       min-height: auto;
     }
   }
-  // widget categories 
+  // widget categories
   .widget_product_categories ul ul.children {
     display: block;
   }
@@ -2182,6 +2182,12 @@ ul.products {
   }
 }
 
+.custom-product-designer__options {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 .fpd-container .fpd-main-wrapper.is-custom {
   background-size: cover !important;
 }
@@ -2358,12 +2364,41 @@ ul.products {
   }
 }
 
+.select-wrapper {
+  position: relative;
+
+  & select {
+    color: #ffffff;
+    background-color: #2d8ecd;
+    border-color: #2d8ecd;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.0105em;
+    padding: 24px 58px 24px 24px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 330 330' style='enable-background:new 0 0 330 330;' xml:space='preserve'%3E%3Cpath fill='%23fff' id='XMLID_225_' d='M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z'/%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
+    background-size: 14px auto;
+    background-position: right 16px center;
+
+    & > button {
+      stroke: #fff;
+    }
+
+    & option:disabled {
+      color: #fff;
+    }
+  }
+}
+
 .fpd-product-checkout-form {
   background-color: #000;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
+  align-items: start;
   text-align: center;
   padding: 2rem;
   position: relative;
@@ -2420,6 +2455,16 @@ ul.products {
       }
     }
   }
+
+  &__select {
+    width: 200px;
+  }
+
+  &__products {
+    // width: 500px;
+    flex: 0 1 auto;
+    max-width: 450px;
+  }
 }
 
 .square-ratio-wrapper {
@@ -2448,6 +2493,7 @@ ul.products {
       color: #fff;
       font-weight: 900;
       font-size: 1.5rem;
+      display: none !important;
 
       & span {
         font-weight: inherit;
