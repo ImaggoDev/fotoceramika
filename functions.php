@@ -152,12 +152,14 @@ function custom_product_designer_variations() {
 add_action('woocommerce_after_single_product_summary', function () {
     echo '<div class="custom-product-designer" style="width: 100%; margin-bottom: 1rem;">';
     do_action('fpd_product_designer');
+    echo "<div class='custom-product-designer__options'>";
     do_action('custom_product_designer_variations');
     add_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 50 );
         echo '<div class="custom-product-designer-form">';
             do_action( 'woocommerce_variable_add_to_cart');
         echo '</div>';
     echo '</div>';
+    echo "</div>";
 });
 
 
@@ -191,6 +193,7 @@ function add_baner_to_product() {
 
     // baners
     $baners = get_field('promo-banner', 'option');
+
     foreach($terms ?? [] as $term) {
         $term_id = $term->term_id;
         foreach($baners ?? [] as $baner) {
@@ -227,21 +230,21 @@ function my_acf_json_load_point( $paths ) {
 
 
 /**
- * 
+ *
  * Woocommerce my account nav
- * 
+ *
  */
 
 add_filter ( 'woocommerce_account_menu_items', 'custom_myaccount_nav' );
 
 function custom_myaccount_nav( $menu_links ){
-	
-    unset( $menu_links['edit-address'] ); 
-	unset( $menu_links['dashboard'] ); 
-	unset( $menu_links['orders'] ); 
-	unset( $menu_links['downloads'] ); 
-	unset( $menu_links['edit-account'] ); 
-	unset( $menu_links['customer-logout'] ); 
+
+    unset( $menu_links['edit-address'] );
+	unset( $menu_links['dashboard'] );
+	unset( $menu_links['orders'] );
+	unset( $menu_links['downloads'] );
+	unset( $menu_links['edit-account'] );
+	unset( $menu_links['customer-logout'] );
 
     $menu_links['dashboard'] = 'Kokpit';
 	$menu_links['edit-account'] = 'Dane osobowe';
@@ -253,9 +256,9 @@ function custom_myaccount_nav( $menu_links ){
 }
 
 /**
- * 
- * Woocommerce delete field display name user 
- * 
+ *
+ * Woocommerce delete field display name user
+ *
  */
 
 add_filter('woocommerce_save_account_details_required_fields', 'account_details_required_fields' );
@@ -265,12 +268,12 @@ function account_details_required_fields( $required_fields ){
 }
 
 /**
- * 
- * Woocommerce orders column change name 
- * 
+ *
+ * Woocommerce orders column change name
+ *
  */
 
-function filter_woocommerce_account_orders_columns( $columns ) {    
+function filter_woocommerce_account_orders_columns( $columns ) {
     $columns['order-actions'] = __( 'Akcje', 'woocommerce' );
     return $columns;
 }
@@ -278,52 +281,52 @@ add_filter( 'woocommerce_account_orders_columns', 'filter_woocommerce_account_or
 
 
 /**
- * paczkomat usuniecie opcji za pobraniem 
+ * paczkomat usuniecie opcji za pobraniem
  */
 add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_paczkomat_cod' );
-  
-function gateway_disable_paczkomat_cod( $available_gateways ) {   
+
+function gateway_disable_paczkomat_cod( $available_gateways ) {
    if ( ! is_admin() ) {
-        
+
       $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
       $chosen_shipping = $chosen_methods[0];
-        
+
       if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:1' ) ) {
         unset( $available_gateways['cod'] );
       }
    }
-   return $available_gateways;   
+   return $available_gateways;
 }
 
 /**
- * inpost kurier usuniecie opcji za pobraniem 
+ * inpost kurier usuniecie opcji za pobraniem
  */
 add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_inpost_cod' );
-  
-function gateway_disable_inpost_cod( $available_gateways ) {   
+
+function gateway_disable_inpost_cod( $available_gateways ) {
    if ( ! is_admin() ) {
-        
+
       $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
       $chosen_shipping = $chosen_methods[0];
-        
+
       if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:3' ) ) {
         unset( $available_gateways['cod'] );
       }
    }
-   return $available_gateways;   
+   return $available_gateways;
 }
 
 /**
  * inpost kurier pobranie  usuniecie opcji platnosci online
  */
 add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_inpost_online_payment' );
-  
-function gateway_disable_inpost_online_payment( $available_gateways ) {   
+
+function gateway_disable_inpost_online_payment( $available_gateways ) {
    if ( ! is_admin() ) {
-        
+
       $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
       $chosen_shipping = $chosen_methods[0];
-        
+
       if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:2' ) ) {
         unset( $available_gateways['bacs'] );
         unset( $available_gateways['pay_by_paynow_pl_google_pay'] );
@@ -331,12 +334,12 @@ function gateway_disable_inpost_online_payment( $available_gateways ) {
         unset( $available_gateways['pay_by_paynow_pl_blik'] );
       }
    }
-   return $available_gateways;   
+   return $available_gateways;
 }
 
 // Text add to cart
 
-add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );  
+add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );
 function woocommerce_custom_product_add_to_cart_text() {
     return __( 'Dodaj do koszyka', 'woocommerce' );
 }
@@ -355,16 +358,16 @@ function checkout_fields_in_label_error( $field, $key, $args, $value ) {
 }
 
 
-// Other featured image home page 
+// Other featured image home page
 
 function replacing_template_loop_product_thumbnail() {
     if ( is_front_page() )  {
         function wc_template_loop_product_replaced_thumb() {
             if ( get_field( "product_image_home" ) )  {
             $home_product_image = get_field( "product_image_home" );
-            echo '<img width="336" height="336" 
-            src="'. $home_product_image['url'] . '" class="wp-post-image" alt="'. $home_product_image['title'] . '" loading="lazy" 
-            srcset="'. $home_product_image['url'] . ' 336w, 
+            echo '<img width="336" height="336"
+            src="'. $home_product_image['url'] . '" class="wp-post-image" alt="'. $home_product_image['title'] . '" loading="lazy"
+            srcset="'. $home_product_image['url'] . ' 336w,
             '. $home_product_image['url'] . ' 672w" sizes="(max-width: 336px) 100vw, 336px">';
             }
         }
