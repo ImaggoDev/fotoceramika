@@ -2062,6 +2062,9 @@ a.btn-primary:focus, a.btn-primary:active {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -5357,7 +5360,8 @@ ul.products li.product:hover .add_to_cart_button {
 }
 
 .fpd-product-checkout-form__select {
-  width: 200px;
+  width: auto;
+  min-width: 200px;
 }
 
 .fpd-product-checkout-form__products {
