@@ -2457,7 +2457,8 @@ ul.products {
   }
 
   &__select {
-    width: 200px;
+    width: auto;
+    min-width: 200px;
   }
 
   &__products {
