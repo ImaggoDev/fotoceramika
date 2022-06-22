@@ -49,8 +49,8 @@ endforeach;
         <div class="product-info__single-info">
             <div class="product-info__value">
 
-            <span> <?=  __('Cena: ', 'fotoceramika') ?>  </span>
-              <?= $price ?>
+            <span> <?=  __('Cena: ', 'fotoceramika') ?> &nbsp </span>
+              <b><?= $price ?></b>
             </div>
         </div>
 
