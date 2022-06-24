@@ -281,34 +281,40 @@ add_filter( 'woocommerce_account_orders_columns', 'filter_woocommerce_account_or
 
 
 /**
- * paczkomat usuniecie opcji za pobraniem
+ * Shipping limit cod online
  */
-add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_paczkomat_cod' );
+add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_cod_online' );
 
-function gateway_disable_paczkomat_cod( $available_gateways ) {
+function gateway_disable_cod_online( $available_gateways ) {
    if ( ! is_admin() ) {
 
       $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
       $chosen_shipping = $chosen_methods[0];
+    //inpost kurier pobranie  usuniecie opcji platnosci online
+      if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:2' ) ) {
+        unset( $available_gateways['bacs'] );
+        unset( $available_gateways['pay_by_paynow_pl_google_pay'] );
+        unset( $available_gateways['pay_by_paynow_pl_pbl'] );
+       unset( $available_gateways['pay_by_paynow_pl_blik'] );
+      }
 
+      // inpost kurier pobranie  usuniecie opcji platnosci online
+      if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:13' ) ) {
+        unset( $available_gateways['bacs'] );
+        unset( $available_gateways['pay_by_paynow_pl_google_pay'] );
+        unset( $available_gateways['pay_by_paynow_pl_pbl'] );
+       unset( $available_gateways['pay_by_paynow_pl_blik'] );
+       
+      }
+    // ups usuniecie opcji platnosci pobranie
+    if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:11' ) ) {
+        unset( $available_gateways['cod'] );
+    }
+    //paczkomat usuniecie opcji za pobraniem
       if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:1' ) ) {
         unset( $available_gateways['cod'] );
       }
-   }
-   return $available_gateways;
-}
-
-/**
- * inpost kurier usuniecie opcji za pobraniem
- */
-add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_inpost_cod' );
-
-function gateway_disable_inpost_cod( $available_gateways ) {
-   if ( ! is_admin() ) {
-
-      $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
-      $chosen_shipping = $chosen_methods[0];
-
+      //inpost kurier usuniecie opcji za pobraniem
       if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:3' ) ) {
         unset( $available_gateways['cod'] );
       }
@@ -316,26 +322,7 @@ function gateway_disable_inpost_cod( $available_gateways ) {
    return $available_gateways;
 }
 
-/**
- * inpost kurier pobranie  usuniecie opcji platnosci online
- */
-add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_inpost_online_payment' );
 
-function gateway_disable_inpost_online_payment( $available_gateways ) {
-   if ( ! is_admin() ) {
-
-      $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
-      $chosen_shipping = $chosen_methods[0];
-
-      if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:2' ) ) {
-        unset( $available_gateways['bacs'] );
-        unset( $available_gateways['pay_by_paynow_pl_google_pay'] );
-        unset( $available_gateways['pay_by_paynow_pl_pbl'] );
-        unset( $available_gateways['pay_by_paynow_pl_blik'] );
-      }
-   }
-   return $available_gateways;
-}
 
 // Text add to cart
 
