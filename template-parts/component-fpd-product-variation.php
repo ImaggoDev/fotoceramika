@@ -6,7 +6,7 @@ $thumb = $variation['image_src'];
 
 // Product size
 $dimensions = $variation['dimensions'];
-$dimensions_render = $dimensions['height'] ? "{$dimensions['height']}x{$dimensions['length']}x{$dimensions['width']} cm" : null;
+$dimensions_render = $dimensions['height'] ? "{$dimensions['length']}x{$dimensions['width']}x{$dimensions['height']}cm" : null;
 
 //Product weight
 $weight = $variation['weight'] ? $variation['weight_html'] : null;
@@ -29,7 +29,7 @@ endforeach;
       <?php if ($dimensions_render): ?>
           <div class="product-info__single-info">
               <p>Rozmiar cm</p>
-              <small>(wysokość, szerokość, głębokość)</small>
+              <small>(szerokość, głębokość, wysokość)</small>
 
               <div class="product-info__value">
                 <?= $dimensions_render ?>

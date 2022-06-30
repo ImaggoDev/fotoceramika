@@ -204,6 +204,17 @@
       }
     }
   }
+
+  @media (max-width: $small_laptop) {
+    .home-slider {
+      .owl-item {
+        img {
+          opacity: 0.1;
+        }
+      }
+    }
+  }
+
   @media (max-width: $small_tablet) {
     .home-slider {
       .owl-item {
