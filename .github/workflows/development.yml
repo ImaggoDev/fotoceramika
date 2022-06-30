@@ -1,9 +1,9 @@
 on:
   push:
     branches:
-      - main
+      - development
 
-name: Build and Publish on production
+name: Build and Publish on development imaggo-work.pl
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -15,10 +15,10 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ${{ secrets.PROD_HOST }}
-        username: ${{ secrets.PROD_USER }}
-        password: ${{ secrets.PROD_PASS }}
-        server-dir: ${{ secrets.PROD_PATH }}
+        server: imaggo.ftp.dhosting.pl
+        username: zei3ku_owline2
+        password: 4mtA5vQb2L
+        server-dir: /fotoceramika.imaggo-work.pl/public_html/wp-content/themes/porto-child/
         exclude: |
           **/.git*
           **/.git*/**

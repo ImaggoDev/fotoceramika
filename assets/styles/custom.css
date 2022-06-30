@@ -974,6 +974,12 @@ a.btn-primary:focus, a.btn-primary:active {
   }
 }
 
+@media (max-width: 1460px) {
+  .home .home-slider .owl-item img {
+    opacity: 0.1;
+  }
+}
+
 @media (max-width: 768px) {
   .home .home-slider .owl-item img {
     opacity: 0.1;
