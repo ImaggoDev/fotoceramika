@@ -105,8 +105,9 @@ function custom_product_desc()
 {
     global $post;
     $fpd = get_post_meta($post->ID, 'fpd_product_settings');
+    $acf = get_field('is_fpd', $post->ID);
 
-    if (empty($fpd)) {
+    if (empty($fpd) || $acf == null) {
         return false;
     }
 
@@ -121,11 +122,15 @@ function custom_product_desc()
 add_action('wp', 'check_product_type');
 
 function check_product_type() {
+    global $post;
     if ( is_product() ){
-        global $post;
-        $fpd = get_post_meta($post->ID, 'fpd_product_settings');
 
-        if (empty($fpd)) {
+        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+
+        $fpd = get_post_meta($post->ID, 'fpd_product_settings');
+        $acf = get_field('is_fpd', $post->ID);
+
+        if (empty($fpd) || $acf == null) {
             return false;
         }
 
@@ -133,7 +138,7 @@ function check_product_type() {
         // remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
 
         remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
-        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+
     }
 }
 
@@ -141,6 +146,16 @@ add_action('custom_product_designer_variations', 'custom_product_designer_variat
 
 function custom_product_designer_variations() {
     global $post;
+
+    if ( is_product() ){
+        $fpd = get_post_meta($post->ID, 'fpd_product_settings');
+        $acf = get_field('is_fpd', $post->ID);
+
+        if (empty($fpd) || $acf == null) {
+            return false;
+        }
+    }
+
     ob_start();
     get_template_part('template-parts/content', 'fpd-product-checkout-form', array('id' => $post->ID));
     $html = ob_get_contents();
@@ -150,6 +165,17 @@ function custom_product_designer_variations() {
 
 
 add_action('woocommerce_after_single_product_summary', function () {
+    global $post;
+
+    if ( is_product() ){
+        $fpd = get_post_meta($post->ID, 'fpd_product_settings');
+        $acf = get_field('is_fpd', $post->ID);
+
+        if (empty($fpd) || $acf == null) {
+            return false;
+        }
+
+
     echo '<div class="custom-product-designer" style="width: 100%; margin-bottom: 1rem;">';
     do_action('fpd_product_designer');
     echo "<div class='custom-product-designer__options'>";
@@ -160,6 +186,7 @@ add_action('woocommerce_after_single_product_summary', function () {
         echo '</div>';
     echo '</div>';
     echo "</div>";
+    }
 });
 
 
@@ -304,7 +331,7 @@ function gateway_disable_cod_online( $available_gateways ) {
         unset( $available_gateways['pay_by_paynow_pl_google_pay'] );
         unset( $available_gateways['pay_by_paynow_pl_pbl'] );
        unset( $available_gateways['pay_by_paynow_pl_blik'] );
-       
+
       }
     // ups usuniecie opcji platnosci pobranie
     if ( isset( $available_gateways['bacs'] ) && 0 === strpos( $chosen_shipping, 'flexible_shipping_single:11' ) ) {
